@@ -1,0 +1,128 @@
+* HTML5 Canvas là gì?
+
+- Canvas là một thẻ HTML5 tương tự như những thẻ HTML khác, tuy nhiên có một sự 
+khác biệt rõ rệt nhât là nội dung của Canvas lại được xây dựng từ Javascript. Để 
+sử dụng Canvas thì bạn phải đặt thẻ <canvas></canvas> tại vị trí muốn hiển thị, 
+sau đó sử dụng các API mà HTML5 cung cấp dùng để thao tác với các đối tượng bên 
+trong Canvas (line, circle, ...).
+
+- Khi sử dụng Canvas bạn phải hiểu được sự khác biệt giữa các phần tử của Canvas 
+và nội dung của nó. Phần tử Canvas chỉ là một thẻ HTML thông thường nhưng nội dung 
+của nó là một tập hợp các đối tượng tạo nên một Graphic.
+
+-----------------------------------------------------------------------------------
+
+* HTML5 Canvas - Vẽ đường thẳng
+
+- Để vẽ đường thẳng chúng ta phải xác định vị trí bắt đầu và vị trí kết thúc, 
+mỗi vị trí sẽ được xác định bởi khoảng cách so với lề trái và khoảng cách so với 
+lề trên (trái, trên).
+    <canvas id="myCanvas" width="400" height="200"></canvas>
+    <script>
+        // Lấy đối tượng Canvas
+        var canvas = document.getElementById('myCanvas');
+        // Chọn đối tượng vẽ 2D
+        var context = canvas.getContext('2d');
+        // Tiến hành vẽ
+        context.beginPath();        // Khai báo vẽ đường thẳng mới
+        context.moveTo(10, 10);     // Điểm bắt đầu
+        context.lineTo(490, 190);   // Điểm kết thúc
+        context.stroke();           // Tiến hành vẽ
+    </script>
+    Trong đó chúng ta có:
+    Sử dụng hàm beginPath() để khai báo một đường thẳng mới
+    Sử dụng hàm moveTo(position) để xác định điểm bắt đầu.
+    Sử dụng lineTo(position) để xác định điểm kết thúc
+    Sử dụng hàm stroke() để tiến hành vẽ.
+- Để chọn chiều rộng cho đường thẳng thì ta sử dụng thuộc tính lineWidth,
+để chọn màu ta sử dụng thuộc tính strokeStyle
+- Định dạng hai đầu đường thẳng:
+Định dạng hai đầu đường thẳng hay còn gọi là Line Cap.
+- Để định dạng line Cap thì ta sử dụng thuộc tính lineCap và nó sẽ có một 
+trong ba giá trị sau:
+    butt : vuông góc tại điểm, có chiều bình thường
+    round : bo tròn, dài hơn bình thường do hai đầu bổ sung một đoạn bo 
+    tròn.
+    square : bo hình chữ nhật, dài hơn bình thường do hai đầu bổ sung 
+    đoạn hình chữ nhật.
+- Vẽ đường thẳng nối liên tiếp trong Canvas : Các ví dụ trên chỉ 
+dừng lại ở mức vẽ một đường thẳng, tuy nhiên bạn có thể vẽ nhiều 
+đường thẳng liên tiếp bằng cách sử dụng hàm lineTo().
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    // Tiến hành vẽ
+    context.beginPath();        // Khai báo vẽ đường thẳng mới
+    context.moveTo(10, 10);     // Điểm bắt đầu
+    context.lineTo(390, 10);    // Điểm giữa
+    context.lineTo(20, 190);    // Điểm giữa
+    context.lineTo(390, 190);    // Điểm kết thúc
+    context.lineWidth = 15;     // rộng 15px
+    context.strokeStyle = 'blue';// Màu xanh
+    context.lineCap = 'butt';
+    context.stroke();           // Tiến hành vẽ
+
+-----------------------------------------------------------------------------------
+
+* HTML5 Canvas - Vẽ đường cong
+
+- Ngoài vẽ đường thẳng ra thì Canvas còn có thể vẽ các đường cong 
+như hình cung, đường cong bậc hai, đường cong Benzier. Đối với cách 
+vẽ đường thẳng thì ta chỉ cần xác định hai điểm đầu và cuối nhưng 
+với đường cong thì có khá nhiều vấn đề phải tính toán trước khi 
+vẽ đấy.
+- Vẽ hình cung trong Canvas : Để vẽ hình cung thì chúng ta sử dụng 
+hàm arc(x, y, radius, startAngle, endAngle, counterClockwise), 
+trong đó:
+    x và y là tâm của hình cung
+    radius là bán kính
+    startAngle là góc bắt đầu
+    endAngle là góc kết thúc
+    counterClockwise là hướng vẽ (cùng chiều hoặc ngược chiều kim 
+    đồng hồ)
+- Vẽ đường cong bậc hai trong Canvas: Để vẽ đường cong bậc hai 
+trong Canvas thì ta sử dụng phương thức quadraticCurveTo(), đường 
+cong bậc hai được xác định bởi ba điểm chính gồm:
+    Điểm bắt đầu (context point).
+    Điểm điều khiển (control point).
+    Điểm kết thúc (end point).
+    Vị trí đỉnh của đường cong được xác định bởi đường thẳng nối 
+    trung điểm giữa hai đoạn thẳng (context point, control point) và (end point, control point).
+- Vẽ đường cong Benzier trong Canvas: Đường cong Benzier được 
+xác định bởi bốn điểm:
+    Điểm bắt đầu (context point)
+    Điểm điều khiển một (control point 1)
+    Điểm điều khiển hai (control point 2)
+    Điểm kết thúc (end point)
+
+-----------------------------------------------------------------------------------
+
+* HTML5 Canvas - Nối nhiều đường
+
+- Không dùng phương thức beginPath() sẽ nối được tiếp
+
+-----------------------------------------------------------------------------------
+
+* Thuộc tính line join trong Canvas
+
+- Trong Canvas có thuộc tính lineJoin giúp chúng ta chọn lựa 
+cách nối giữa hai đường thẳng (giao điểm). Nó có ba cách nối 
+như sau:
+    miter: bo thành góc nhọn
+    round: bo tròn góc nối
+    bevel: bo thành góc nhọn nhưng bị mất phần trên đỉnh
+
+-----------------------------------------------------------------------------------
+
+* Hàm arcTo() trong Canvas
+
+- Hàm arcTo() dùng để tạo một vòng cung trong Canvas với điểm 
+bắt đầu là một điểm cho trước, nghĩa là nó dùng để nối tiếp một 
+đường nào đó (đương nhiên đường đó đã có điểm kết thúc và điểm 
+đó cũng chính là điểm start của arcTo()).
+- Cú pháp: context.arcTo(x1, y1, x2, y2, r);
+    Trong đó:
+    x1: vị trí x của điểm điều khiển
+    y1 : vị trí y của điểm điểu khiển
+    x2: vị trí x của điểm kết thúc
+    y2: vị trí y của điểm kết thúc
+    r : bán kính của vòng cung (radius).
