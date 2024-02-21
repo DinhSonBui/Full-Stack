@@ -1,0 +1,166 @@
+* Cấu trúc HTML5: Cách tạo template HTML5 đầu tiên
+
+- Thẻ header dùng để chứa nguyên phần header website của bạn. Nếu lúc trước bạn dùng thẻ div 
+thì với HTMl5 bạn sẽ dùng thẻ này để thay thế.
+    <header>
+        <h1>Phần header</h1>
+    </header>
+- Thẻ Nav, thẻ này thường dùng để chứa những phần navigation như menu.
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Serie</a></li>
+            <li><a href="#">Tutorial</a></li>
+            <li><a href="#">Ebook</a></li>
+        </ul>
+    </nav>
+- Thẻ section là thẻ dùng để chứa nội dung chính của website. Nếu bạn không dùng HTML5 thì 
+bạn hay dùng thẻ div#content để bao quanh.
+    <section>
+        <section>
+            Phần nội dung chính trang web
+        </section>
+        <aside>
+            Phần bên phía sidebar
+        </aside>
+    </section>
+- Thẻ aside, thẻ này thường dùng để chứa khung sidebar như left-sidebar, right-sidebar.
+    <aside>
+        Phần bên phía sidebar
+    </aside>
+- Thẻ cuối cùng là thẻ footer, thay vì khai báo một cái div và định dạng thì ta dùng thẻ footer 
+để bao quanh lại.
+    <footer>
+        Copyright 2014 By Freetuts.net
+    </footer>
+
+-------------------------------------------------------------------------------------------------
+
+* Thẻ article trong HTML5
+
+- Article là một thẻ HTML được thêm vào trong phiên bản HTML5, nó được dùng để khai báo cấu trúc 
+cho các bài viết sẽ hiển thị lên trang web.
+- Thẻ article được dùng trong các trang về danh sách bài viết hoặc chi tiết bài viết. Bên trong 
+mỗi article bạn cũng có thể khai báo thêm các thẻ header khác, đó chính là phần tiêu đề của mỗi 
+article.
+    <article></article>
+- Về tính chất thì thẻ article cũng giống như thẻ div, tức là hiển thị dạng block với chiều rộng 
+100% và chiều cao phụ thuộc vào nội dung bên trong của nó.
+    <section>
+        <article>
+            <header>
+                <hgroup>
+                    <h1>Trung Quốc vi phảm chủ quyền biển Việt Nam</h1>
+                    <h2>Bản Tin 24/7</h2>
+                </hgroup>
+            </header>
+            <p>Trung quốc xâm phạm vùng biển thuộc chủ quyền việt nam một cách trắng trợn</p>
+            <footer>
+                <p>Tác giả: thehalfheart - Đăng ngày: 08-05-2014</p>
+            </footer>
+        </article>
+    </section>
+    + Trong phần section này mình muốn hiển thị một mẫu tin tức nên mình đã tạo một article, và 
+    trong article có header chứa tiêu đề, một thẻ p chứa nội dung và một thẻ footer chứa thông tin 
+    tác giả và ngày đăng của tin tức. Trong header mình có 2 thẻ h1 và h2 nên mình có dùng một thẻ 
+    hgroup để bao quanh lại, nếu bạn chỉ sử dụng một thẻ h1 thôi thì không cần dùng thêm thẻ hgroup.
+    + Tất cả những thẻ article, hgroup, header, footer, section, aside là những thẻ HTMl5, những 
+    thẻ còn lại là thẻ HTML thông thường.
+
+-------------------------------------------------------------------------------------------------
+
+* Thẻ header trong HTML5
+
+- Trong HTML5, thẻ header được dùng để khai báo phần đầu (tiêu đề) cho các bài viết, thậm chí là 
+phần trên cùng của trang web.
+    <header>...</header>
+- Sử dụng nhiều thẻ header trong HTML5 được không?
+    + Câu trả lời là hoàn toàn được nhé các bạn. Ví dụ trong trang hiển thị danh sách bài viết, 
+    bạn sẽ dùng thẻ article để khai báo cho mỗi bài, bên trong mỗi article sẽ khai báo thêm thẻ 
+    header để bao phần tiêu đề của bài viết lại.
+    <article>
+        <header>
+            <h2>Tiêu đề 1</h2>
+        </header>
+        <p>Mô tả bài viết 1</p>
+    </article>
+    <article>
+        <header>
+            <h2>Tiêu đề 2</h2>
+        </header>
+        <p>Mô tả bài viết 2</p>
+    </article>
+    <article>
+        <header>
+            <h2>Tiêu đề 3</h2>
+        </header>
+        <p>Mô tả bài viết 4</p>
+    </article>
+    + cũng có thể sử dụng header để khai báo phần trên cùng (chứa logo và các thông tin cơ bản khác) 
+    của trang web.
+
+------------------------------------------------------------------------------------------------------
+
+* Thẻ hgroup trong HTML5
+
+- hgroup là một thẻ được thêm vào kể từ phiên bản HTML5. Công dụng của nó là dùng để gom nhóm 
+các thẻ từ h1 -> h6 lại với nhau, với điều kiện là các thẻ h này phải nằm chung trong một thẻ 
+header.
+- Cú pháp của thẻ hgroup như sau:
+    <hgroup>
+    </hgroup>
+- Nếu bên trong header chỉ có một thẻ h thì bạn không cần phải khai báo thẻ hgroup.
+    <article>
+        <header>
+            <h1>Tiêu đề</h1>
+        </header>
+    </article>
+- Khi nào thì sử dụng thẻ hgroup?
+    + Tóm lại, bạn cần nhớ kỹ những vấn đề sau:
+        Thẻ hgroup luôn nằm bên trong thẻ header, đó là một chuẩn HTML5.
+        Thẻ hgroup chỉ chứa nội dung bên trong là các thẻ từ h1 -> h6.
+        Còn tất cả các thẻ khác thì phải đặt ở bên ngoài.
+
+------------------------------------------------------------------------------------------------------
+
+* Thẻ nav trong HTML5
+
+- Thẻ nav trong HTML là gì? : Trong HTML, thẻ nav được dùng để bao bọc các vị trí liên quan đến 
+liên kết và điều hướng chính cho trang web. Thường đó sẽ là các menu chính, menu phụ, danh sách 
+chuyên mục bên sidebar ... 
+- Nav là từ viết tắt của navigation, cú pháp của nó như sau:
+    <nav>...</nav>
+
+------------------------------------------------------------------------------------------------------
+
+* Thẻ section trong HTML
+
+- Thẻ section trong HTML5 là gì? : Công dụng của nó là dùng để khai báo cho các vị trí trên giao 
+diện của một trang web.
+- Ví dụ bên sidebar, bạn có 3 blocks thì bạn có thể khai báo một section cho vị trí sidebar, bên 
+trong sidebar khai báo thêm 3 vị trí nữa.
+    <section id="sidebar">
+        <section id="vitri1">
+    
+        </section>
+        <section id="vitri2">
+    
+        </section>
+        <section id="vitri3">
+    
+        </section>
+    </section>
+
+------------------------------------------------------------------------------------------------------
+
+* Thẻ aside trong HTML5
+
+- Thẻ aside trong HTML5 là gì? :Aside dịch ra tiếng Anh có nghĩa là một bên, được dùng trong các vị trí 
+nằm một bên như sidebar. Những vị trí này thường có nội dung liên quan đến chủ đề hiện tại của bài viết.
+- Bạn không nên đặt thẻ aside bên trong thẻ article, hoặc nếu đặt thì nội dung của aside phải liên quan 
+đến bài viết đó. Thông thường thì chúng ta chỉ đặt aside bên sidebar.
+
+------------------------------------------------------------------------------------------------------
+
+* Validate form bằng HTML5
+ư
