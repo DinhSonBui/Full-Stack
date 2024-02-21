@@ -1,0 +1,181 @@
+* Thẻ select trong HTML
+
+- Cách sử dụng thẻ select : Thẻ select dùng để tạo một danh sách 
+dạng xổ xuống với nhiều giá trị khác nhau. Người dùng chỉ có thể 
+chọn một trong số những giá trị đó.
+    <select id="author_id" name="author_name">
+        <option value="cuong">Nguyễn Văn Cường</option>
+        <option value="minh">Hoài Minh</option>
+        <option value="chipheo">Chí Phèo</option>
+    </select>
+- Thuộc tính multiple của thẻ select :Bình thường, bạn chỉ chọn 
+được một giá trị trong thẻ select, nhưng nếu bạn muốn người dùng 
+có thể chọn nhiều giá trị thì có thể sử dụng thuộc tính multiple.
+    <select id="author_id" name="author_name" multiple>
+        <option value="cuong">Nguyễn Văn Cường</option>
+        <option value="minh">Hoài Minh</option>
+        <option value="chipheo">Chí Phèo</option>
+    </select>
+
+-  Các sự kiện thường dùng trong thẻ select: Đây là một thẻ đặc biệt
+, thường được dùng để lấy thông tin từ người dùng. Vì vậy, bạn có 
+thể sử dụng những sự kiện thường gặp trong form như: onchange, 
+onclick, onblur, hover, ...
+
+---------------------------------------------------------------------
+
+* Thẻ input trong HTML
+
+- Thẻ input có chức năng tạo một trường để người dùng có thể 
+nhập dữ liệu đầu vào.
+- Thẻ input được sử dụng cùng với thẻ form để khai báo điều 
+khiển đầu vào cho phép người dùng nhập dữ liệu.
+- Một trường input có thể thay đổi theo nhiều cách, phụ thuộc 
+vào thuộc tính truyền vào.
+- Cách sử dụng thẻ input: 
+    <form>
+        <h1> Login </h1>
+        Username: <input type="text" name="username">
+        <br />
+        Password: <input type="passwword" name="passwword">
+        <br />
+        <input type="submit" name="submit" value="Login">
+    </form>
+- Một số thuộc tính của thẻ input
+    + Thuộc tính type : Type là thuộc tính quan trọng nhất của 
+    thẻ input, nó sẽ quy định tính năng của thẻ input đó.
+    + Một số giá trị của type:
+        text: trường nhập văn bản.
+        password: trường nhập mật khẩu, các kí tự nhập sẽ bị 
+        che đi bằng các kí tự *.
+        checkbox: ô checkbox.
+        radio: Ô radio button
+        submit: nút nhấn để submit form.
+    + Một số giá trị trong HTML5:
+        number: Kiểu number
+        url: Kiểu đường dẫn trang web
+        email: Kiểu email
+    + Thuộc tính value : Value cũng là một thuộc tính rất quan 
+    trọng của thẻ input, nó quy định giá trị của thẻ input.
+    + Thuộc tính pattern:
+
+-----------------------------------------------------------------
+
+* Thẻ textarea trong HTML
+
+- Thẻ textarea sẽ tạo một vùng nhập liệu bao gồm nhiều dòng.
+- Vùng dữ liêu sẽ có số kí tự không hạn chế. Các kí tự sẽ được 
+biểu diễn băng font chữ nhất định( thường là Courier).
+- Kích thước của vùng nhập liệu có thể được xác định bởi cols 
+và thuộc tính của rows hoặc thậm chí là các thuộc tính height 
+và width từ CSS.
+<textarea></textarea>
+- Thuộc tính của thẻ textarea
+    + autofocus - Vùng textarea này sẽ tự động được focus khi 
+    trang tải xong.
+    + cols - quy định chiều dài của vùng hiển thị.
+    + rows - số dòng của vùng dữ liệu.
+    + maxlength - số kí tự tối đa cua vùng textarea.
+
+-----------------------------------------------------------------
+
+* Thẻ button trong HTML
+
+- Thẻ button sẽ tạo ra một nút bấm, nó không tạo ra một hành 
+động submit form như thẻ input. Vì vậy, ta thường sử dụng kết 
+hợp với Javascript để tạo ra các hành động theo yêu cầu của bài 
+toán.
+- Trong cặp thẻ <button></button>, người dùng có thể đặt nội 
+dung là một đoạn văn bản hoặc một hình ảnh. Đây là điểm khác 
+nhau giữa thẻ button và thẻ input có type = button.
+- Thuộc tính của thẻ button trong html : Dưới đây là một số 
+thuộc tính thường sử dụng nhất.
+    autofocus - tự động focus vào thẻ khi tải xong trang.
+    type - sẽ quy điinh kiểu của nút, bao gồm: submit, reset, button.
+    name - tên của nút.
+    disabled - nút có bị vô hiệu hóa hay không.
+
+----------------------------------------------------------------
+
+* Thẻ option trong HTML
+
+- Thẻ option sẽ tạo ra một tùy chọn trong danh sách các tùy 
+chọn của thẻ <select>.
+- Sử dụng thẻ <option> bên trong cặp thẻ <select> hoặc <datalist>.
+- Thuộc tính của thẻ option trong HTML : Dưới đây là một thuộc
+tính thường dùng trong thẻ select.
+    + disabled - vô hiệu hóa option, nó vẫn sẽ hiển thị nhưng 
+    không cho người dùng chọn.
+    + label - đặt một label ngắn cho option.
+    + selected - nếu option nào có thuộc tính này, nó sẽ là giá 
+    tị mặc định được chọn sau khi tải trang.
+    + value - giá trị của option, cũng là giá trị của select 
+    nếu option đó được chọn.
+
+---------------------------------------------------------------
+
+* Thẻ optgroup trong HTML
+- Thẻ optgroup có chức năng nhóm các tùy chọn( option) có liên 
+quan trong danh sách tùy chọn.
+- Nếu bạn có một dách sách bao gồm rất nhiều option thì việc 
+hóm các option có liên quan sẽ giúp cho người dùng dễ dàng xử 
+lý hơn. Đó chính là công dụng của thẻ optgroup.
+    <select>
+        <optgroup label="PHP Framework">
+            <option>Laravel</option>
+            <option>Zend 2</option>
+        </optgroup>
+        <optgroup label="js Framework">
+            <option>Jquery</option>
+            <option>Nodejs</option>
+        </optgroup>
+    </select>
+- Các thuộc tính của thẻ optgroup
+    + disabled - vô hiệu hóa các tùy chọn nằm trong cặp thẻ 
+    optgroup.
+    + label - định rõ label cho nhóm optgroup.
+
+-------------------------------------------------------------------
+
+* Thẻ fieldset trong HTML
+
+- Thẻ fieldset sẽ nhóm các phần từ có liên quan trong form lại 
+với nhau nhằm giúp cho người dùng dễ dàng hơn cho việc nhập thông 
+tin chính xác.
+- Thẻ fieldset sẽ tạo ra một khung bao quanh các phần tử liên quan.
+- Khi bạn muốn gửi cho người dùng một form nhập liệu với rất nhiều 
+các trường, việc chú thích trường bằng thẻ label có thể không cung 
+cấp đủ thông tin cho người dùng về thông tin bạn muốn người dùng 
+nhập. Khi đó, việc sử dụng thẻ fieldset sẽ giúp việc nhập thông 
+tin đó trở nên dễ dàng hơn.
+- Thẻ này có hai thuộc tính cơ bản như sau:
+    + disabled - vô hiệu hóa các phần tử nằm bên trong thẻ fieldset.
+    + name - tên của vùng fieldset.
+
+-------------------------------------------------------------------
+
+* Thẻ label là gì?
+
+- Thẻ label trong html có tác dụng đặt nhãn để mô tả cho thẻ input. 
+Thực chất thẻ label không hiển thị bất cứ thứ gì đặc biệt cho người 
+dùng. Tuy nhiên, khi click vào nội dung bên trong thẻ label, con 
+trỏ chuột sẽ tự động nhảy vào phần tử mà thẻ label đó đại diện.
+- Thuộc tính for của thẻ label : thuộc tính for của thẻ label có 
+tác dụng trỏ đến thẻ input mà nó đại diện. Giá trị của nó phải t
+rùng với ID của thẻ input đó thì khi click vào label con trỏ sẽ 
+tự động nhảy đến thẻ input.
+
+--------------------------------------------------------------------
+
+* Thẻ form trong HTML
+
+- Thẻ form có chức năng tạo một mẫu HTML để người dùng nhập, sau đó 
+gửi dữ liệu lên phía server bằng cách tạo ra một hành động submit 
+form. Bên trong form có thể chứa các phần tử sau: <input>, <textarea>,
+<button>, <select>, <option>, <optgroup>, <fieldset>,<label>
+    <form method="" action=""></form>
+    Trong đó:
+        action - đường dẫn mà form sẽ gửi dữ liệu tới.
+        method - phương thức gửi dữ liệu bao gồm: POST, GET.
+        
+

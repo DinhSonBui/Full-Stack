@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select name="name" id="" multiple>
+      <option value="Nguyễn Văn A">Nguyễn Văn A</option>
+      <option value="Nguyễn Văn B">Nguyễn Văn B</option>
+      <option value="Nguyễn Văn C">Nguyễn Văn C</option>
+    </select>
+    <form>
+          
+      <h1>Login</h1>
+          Username: <input type="text" name="username" />     <br />
+          Password: <input type="passwword" name="passwword" />     <br />
+          <input type="submit" name="submit" value="Login" />
+    </form>
+    <form>
+      <input type="text" name="username" />
+      <input type="text" name="email" />
+      <button type="reset">Reset</button>
+    </form>
+    <form>
+      <select id="select">
+        <option value="php">PHP</option>
+        <option value="js">Javascript</option>
+        <option value="html/css" selected="selected">HTML-CSS</option>
+        <option value="db">Database</option>
+        <option value="mobile">Lập trình mobile</option>
+      </select>
+      <input
+        type="submit"
+        name="Submit"
+        onclick='alert(document.getElementById("select").value)'
+      />
+    </form>
+
+    <select>
+      <optgroup label="PHP Framework">
+        <option>Laravel</option>
+        <option>Zend 2</option>
+      </optgroup>
+      <optgroup label="js Framework">
+        <option>Jquery</option>
+        <option>Nodejs</option>
+      </optgroup>
+    </select>
+
+    <select>
+      <optgroup label="PHP Framework">
+        <option>Laravel</option>
+        <option>Zend 2</option>
+      </optgroup>
+      <optgroup label="js Framework" disabled="disabled">
+        <option>Jquery</option>
+        <option>Nodejs</option>
+      </optgroup>
+    </select>
+
+    <br />
+    <form action="/action_page.php">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" /><br />
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" /><br />
+    </form>
+  </body>
+</html>
