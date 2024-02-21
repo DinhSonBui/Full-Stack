@@ -1,0 +1,277 @@
+* HTML là gì ? 
+
+- HTML là chữ viết tắt của HyperText Markup Language, dịch ra tiếng Việt có nghĩa là ngôn ngữ đánh 
+dấu siêu văn bản. 
+- Vì HTML là một định dạng đặc biệc của XML nên nó sẽ có thẻ mở và thẻ đóng với cú pháp như sau:
+<tagname></tagname> 
+- Thông thường, bổ cục HTML của một website sẽ có dạng như sau:
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Page Title</title>
+        </head>
+        <body>
+    
+            <h1>My First Heading</h1>
+            <p>My first paragraph.</p>
+    
+        </body>
+    </html>
+    Như vậy trong một website chúng ta chia làm 2 phần chính:
+    Phần 1: Là nhũng khai báo thông tin cho trang web và ta đặt nó trong thẻ head.
+    Phần 2: Là phần hiển thị định dạng nội dung của trang web và ta đặt trong thẻ body.
+
+----------------------------------------------------------------------------------------------------------
+
+* HTML elements và attributes
+
+- Element html chính là danh sách những thẻ html mà trình duyệt hỗ trợ, và nó cũng nằm trong danh sách 
+các thẻ html mà WWW đã quy định . Danh sách các thẻ HTML rất là nhiều nên rất khó để liệt kê và hướng 
+dẫn sử dụng, một số thẻ như: html , body, head, title, meta, h1, h5, h6, p, div, table,....
+- Ta có thể ví mỗi thẻ HTML như là một đối tượng. Lúc này đối tượng HTML sẽ có các thuộc tính để mô tả 
+cho nó. Ví dụ thẻ input thì nó có các thuộc tính như sau:
+    name: Dùng để khai báo tên
+    type: Dùng để thiết lập thể loại
+    id: Dùng để đặt tên khóa cho thẻ
+    value: Dùng để khai báo giá trị cho thẻ
+    VD: <input type="text" name="inputname" id="inputid" value=""/> 
+
+
+----------------------------------------------------------------------------------------------------------
+
+* Định dạng văn bản bằng HTML
+
+- Các thẻ HTML định dạng văn bản thông dụng
+    Thẻ p - phân đoạn văn
+    Thẻ br - xuống hàng
+    Thẻ b - bôi đậm
+    Thẻ strong - nhấn mạnh - cũng chẳng khác gì thẻ b
+    Thẻ i - in nghiêng
+    Thẻ small - chữ nhỏ
+    Thẻ mark - hightline
+    Thẻ del - gạch giữa
+    Thẻ sub - nhảy xuống dưới
+    Thẻ sup - nhảy lên trên
+
+----------------------------------------------------------------------------------------------------------
+
+* Heading và List trong HTML
+
+- Thẻ h (heading) dùng để tạo tiêu đề chính và các tiêu đề phụ cho một trang web, nó không những có 
+tác dụng nhấn mạnh cho các tiêu đề mà còn có tác dụng trong lĩnh vực SEO website. Chúng ta có tổng cộng 
+6 thẻ h, từ h1 -> h6 và kích thước font chữ mặc định của từng thẻ sẽ giảm dần từ H1 sẽ có kích thước lớn
+nhất, tiếp theo là h2.. và cuối cùng là h6
+- Nếu heading dùng để tạo tiêu đề chính và tiêu đề phụ cho các mục thì thẻ list lại có công dụng là liệt 
+kê danh sách dữ liệu. Cách trình bày này khá thông dụng khi làm việc với Word. Để tạo được cấu trúc trên 
+thì chúng ta phải kết hợp các thẻ ul và li. Trong đó thẻ ul dùng khai báo danh sách items và thẻ li dùng 
+khai báo cho từng item.
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+
+----------------------------------------------------------------------------------------------------------
+
+* Thẻ Table trong HTML (colspan, rowspan, cellpadding và cellspacing)
+
+- Thẻ table trong HTML là một thẻ đặc biệt, được dùng để hiển thị dữ liệu dạng bảng lên trình duyệt. Mỗi 
+table sẽ có số hàng và số cột được xác định. Bạn cũng có thể gộp hai hai ô gần kề nhau thành một ô giống 
+như trong Word. Cách đơn giản nhất để tạo table là tuân theo cú pháp sau:
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <td>Hàng 1 cột 1</td>
+            <td>Hàng 1 cột 2</td>
+            <td>Hàng 1 cột 3</td>
+        </tr>
+        <tr>
+            <td>Hàng 2 cột 1</td>
+            <td>Hàng 2 cột 2</td>
+            <td>Hàng 2 cột 3</td>
+        </tr>
+    </table>
+    Trong đó:
+    Thuộc tính border="1" là khai báo đường viền của table
+    Thuộc tính cellspacing="0" là khai báo khoảng cách giữa viền trên và viền dưới của đường viền
+    Thuộc tính cellpadding="5" là khai báo khoảng cách giữa nội dung trong ô so với đường viền
+    Nếu muốn thêm một cột thì chỉ việc bổ sung một td
+    Nếu muốn thêm một hàng thì chỉ việc bổ sung một tr
+- Colspan html là một thuộc tính của thẻ table, nó được dùng để trộn các ô lại với nhau trên cùng một hàng.
+- Tương tự như colspan, rowspan được dùng để gộm hai ô lại với nhau. Tuy nhiên, nó sẽ gộp theo cột chứ không 
+phải theo hàng. 
+
+----------------------------------------------------------------------------------------------------------
+
+* Thẻ a trong HTML
+
+- Thẻ a trong html được dùng để tạo link, tức là các đường dẫn của một website nào đó trên internet.
+    <a href="https:/google.com">Google</a>
+    Trong đó href chính là đường dẫn đến trang web mà bạn muốn trỏ đến.
+- Các thuộc tính của thẻ a trong HTML
+    + Thuộc tính title của thẻ a : dùng để mô tả ý nghĩa của đường liên kết. Khi bạn hover chuột vào link 
+    thì sẽ xuất hiện một dòng chữ, đó chính là nội dung mà ta đã đặt vào thuộc tính title.
+    <a href="https://freetuts.net/hoc-javascript" title="học javascript tại đây">học javascript</a>
+    + Thuộc tính rel của thẻ a: Nếu người bình thường thì sẽ ít quan tâm đến thuộc tính này. Nhưng nếu bạn 
+    là dân SEO thì sẽ cần chú ý đấy. Thuộc tính rel dùng để khai báo cho các công cụ search engine biết 
+    là có dò đường link này hay không. Nó có hai giá trị như sau: follow là có dò, nofollow là không dò
+    <a href="https://freetuts.net/hoc-javascript" rel="nofollow">học javascript</a>
+    + Thuộc tính target của thẻ a : Khi bạn click vào link thì trình duyệt sẽ chuyển hướng đến trang đích 
+    ngay lập tức và ngay trên tab hiện tại. Nếu bạn muốn chuyển đến một tab khác thì có thể sử dụng thuộc 
+    tính target.
+    _blank thì nó sẽ chuyên link trên tab mới
+    _self thì nó sẽ chuyển link trên tab hiện tại (giá trị mặc định)
+    _parent thì nó sẽ chuyển link tới tab mở tab hiện tại. Ta còn hay gọi là tab cha của tab hiện tại
+    _top thì nó sẽ nhảy tới tab hiện tại và thường dùng trong iframe khi muốn thoát khỏi iframe và chạy 
+    tới trang gốc luôn.
+    + Thuộc tính download của thẻ a : Dùng để tải nội dung về nha
+- Giá trị href # của thẻ a trong HTML
+- Các trạng thái của thẻ a trong HTML
+    Thẻ a gồm có 4 trạng thái chính đó là:
+    link: Chưa có hành động nào trên link
+    visited: Đã click vào link và đi đến trang đích
+    hover: Di chuyển qua link
+    active: Link đã được active
+
+----------------------------------------------------------------------------------------------------------
+
+* Thẻ img trong HTML
+
+- Img là chữ viết tắt của image, nó là một thẻ HTML được dùng để tạo hình ảnh trên các 
+trang web.
+    <img src="link"/>
+- Các thuộc tính của thẻ img trong HTML
+    + Thuộc tính src : Đây là thuộc tính chứa đường dẫn trỏ đến file hình
+    + Thuộc tính alt : Đây là thuộc tính sẽ hiển thị trong trường hợp bạn truyền URL 
+    image bị sai, lúc này nó sẽ hiển thị đoạn text này thay vì hình ảnh.
+    + Thuộc tính width và height : Đây là thuộc tính thiết lập chiều rộng (width) và 
+    chiều cao (height) cho hình ảnh.
+
+----------------------------------------------------------------------------------------------------------
+
+* Thuộc tính style trong HTML
+
+- Đa phần các thẻ HTML đều có thuộc tính style này. Nó được dùng để bổ sung CSS, thay 
+đổi cách hiện thị mặc định của thẻ HTML đó. Cú pháp như sau:
+    <tagname style="CSS_PROPERTY">
+    <div style="background:red">Học HTML</div>
+
+----------------------------------------------------------------------------------------------------------
+
+* Thẻ style trong HTML 
+
+- Style là một thẻ HTML bình thường, nó có công dụng là xác định phạm vi chứa code CSS 
+cho trình duyệt biên dịch. Tất cả những đoạn mã bên trong thẻ style đều không hiển thị 
+lên giao diện, mà nó chỉ biên dịch và chạy ngầm trong trình duyệt.
+- Cặp thẻ style thường được trong cặp thẻ head
+
+----------------------------------------------------------------------------------------------------------
+
+* Phân biệt thẻ HTML Block và Inline
+
+- Thẻ HTML block là gì? : HTML block là cách hiển thị của một thẻ HTML trên 
+trình duyệt sẽ ở dạng khối, có độ dài 100% và có chiều cao phụ thuộc vào 
+nội dung nằm bên trong. Điều này có nghĩa rằng tất cả những thẻ HTML nằm 
+phía dưới khi hiển thị lên trình duyệt sẽ nằm ở một hàng khác.
+- Chúng ta có một số thẻ HTML dạng block như: div, p, header, footer, table, 
+ul, li, section, article.. và nhiều thẻ khác.
+    Đặc điểm chung của các thẻ này là:
+    Có chiều dài mặc định là 100%
+    Có thể thiết lập khoảng trống giữa nội dung và đường viền.
+    Có thể thay đổi độ rộng bằng thuộc tính width.
+-  Thẻ HTML inline là gì?: HTML inline là cách hiển thị nội dung bên trong 
+của thẻ HTML trong 1 phạm vi xác định. Nghĩa là chiều dài của nó sẽ phụ thuộc 
+vào độ lớn của dữ liệu. Vì vậy, các thẻ inline sẽ hiển thị nối tiếp nhau chứ 
+không xuống hàng như block.
+- Có rất nhiều thẻ HTML hiển thị dạng inline như: span, strong, i, b, a, br, 
+big, button, textarea, label,
+-  Khi nào sử dụng thẻ HTML inline và block? : Việc phân ra hai định dạng như 
+vậy là có lý do cả. Nếu bạn muốn tạo một thẻ HTML bao bọc một khối bên trong thì 
+nên sử dụng thẻ div hoặc thẻ p, bởi vì nó hiển thị dạng block. Còn nếu bạn muốn 
+hiển thị dữ liệu trên một hàng thì hãy sử dụng các thẻ inline.
+- Câu hỏi đặt ra là liệu ta có thể biến một thẻ block thành thẻ inline không? Rất 
+đơn giản, chỉ cần sử dụng thuộc tính CSS display là được nhé.
+    Thiết lập CSS display:inline cho hai thẻ div.
+    Ngược lại, nếu bạn muốn chuyển từ inline sang block thì sử dụng thuộc tính CSS: 
+    display:block.
+
+----------------------------------------------------------------------------------------------------------
+
+* Thẻ div trong HTML
+
+- Thẻ div trong HTML là một thẻ bình thường, được hiển thị mặc định ở dạng block. Vì vậy, ta 
+thường sử dụng nó để tạo các block trên giao diện của trang web.
+- Chiều dài mặc định của thẻ div là 100%, nghĩa là nó kéo dài full từ bên trái sang bên phải, 
+miền được giới hạn bởi khoảng trống mà các thẻ HTML bên ngoài tạo thành. Thẻ div không có một 
+thuộc tính điều chỉnh cách hiển thị nào cả, mà ta phải kết hợp với CSS để thay đổi nếu cần.
+    <div>
+        ... Nội dung bên trong
+    </div>
+- Cũng có thể tạo nhiều thẻ div lồng nhau như sau:
+    <div>
+        <div>
+            <div>
+                ... Nội dung bên trong
+            </div>
+        </div>
+    </div>
+    Đương nhiên là lạm dụng quá nhiều thẻ HTML trong một giao diện sẽ ảnh hưởng đến tốc độ tải 
+    trang, SEO .. và nhiều yếu tố khác. Vì vậy, với những người làm frontend kinh nghiệm thì họ 
+    sẽ rất hạn chế sử dụng quá nhiều cấp HTML.
+- Cách tạo một khối div trên giao diện HTML
+
+----------------------------------------------------------------------------------------------------------
+
+* Phân biệt ID và Class trong HTML
+
+-  ID trong HTML là gì? : ID trong HTML là một chuỗi xác định và duy nhất, dùng để gắn cho một 
+thẻ HTML nào đó. Trong một file HTML thì ID là duy nhất, nghĩa là bạn không thể đặt 1 ID cho 2 
+thẻ HTML.
+    <div id="id_div">
+    </div>
+- Class trong HTML là gì? : Nếu ID là duy nhất trong một file tài liệu HTML thì class thì lại khác,
+nó được dùng để thiết lập một lớp các đối tượng có chung một đặc điểm. Vì vậy, bạn có thể gắn một 
+class cho nhiều thẻ HTML khác nhau.
+- Khi nào sử dụng ID và khi nào sử dụng class? 
+    + ID là duy nhất trong một tập tài liệu HTML. Vì vậy, bạn nên đặt nó nếu cấu trúc trang web 
+    chỉ tồn tại một vị trí mà thôi, tức CSS không có tính kế thừa.
+    + Class thì khác, có thể gắn class cho nhiều thẻ HTML khác nhau. Vì vậy, bạn nên sử dụng trong 
+    trường hợp muốn các thẻ HTML khác nhau có thể kế thừa CSS của nhau.
+
+----------------------------------------------------------------------------------------------------------
+
+* Các thẻ HTML tạo form thu thập dữ liệu
+- form dữ liệu là một form gồm tập hợp các mã HTML thuộc nhóm form như: Form liên hệ, form bình 
+luận, form đặt hàng ... Nó sử dụng các thẻ như: input, select, option, textarea, button để giúp 
+người dùng có thể nhập dữ liệu vào và gửi lên server.
+    <form method="post" action="url">  
+    </form>
+- Dùng thẻ input để tạo một ô nhập dữ liệu : Thẻ input được sử dụng thường xuyên nhất. Nó có 
+nhiều định dạng khác nhau như:
+    Một ô nhập dữ liệu
+    Các checkbox
+    Các radio box
+    <form method="post" action="url">
+        Input: <input type="text" value=""/> <br/>
+        Radio: <input type="radio" value=""/> <br/>
+        Checkbox: <input type="checkbox" value=""/>
+    </form>
+- Dùng thẻ textarea để lấy dữ liệu lớn
+    <form method="post" action="url">
+        <textarea cols="20" rows="10"></textarea>
+    </form>
+-   Dùng thẻ input để tạo button submit
+    <form method="post" action="url">
+        <input type="submit" value="Liên hệ"/>
+    </form>
+- Dùng thẻ select để tạo dạng combobox
+    <form method="post" action="url">
+        <select>
+            <option> -- Hãy chọn -- </option>
+            <option>Tùy chọn 1</option>
+            <option>Tùy chọn 2</option>
+            <option>Tùy chọn 3</option>
+            <option>Tùy chọn 4</option>
+        </select>
+    </form>
+
+----------------------------------------------------------------------------------------------------------
