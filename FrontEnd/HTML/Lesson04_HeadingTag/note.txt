@@ -1,0 +1,103 @@
+* Thẻ title trong HTML
+
+- Thẻ title trong HTML là gì? : Thẻ title có các chức năng sau:
+    + Định nghĩa tiêu đề trên thanh công cụ của trình duyệt.
+    + Cung cấp tiêu đề cho trang khi nó được thêm vào mục yêu thích.
+    + Tiêu đề sẽ hiển thị đại diện cho trang trong các kết quả tìm
+    kiếm.
+    <title>Nội dung</title>
+
+----------------------------------------------------------------------
+
+* Thẻ base trong HTML
+
+----------------------------------------------------------------------
+
+* Thẻ link trong HTML
+
+- Thẻ link trong HTML là gì? : Thẻ link định nghĩa một liên kết 
+giữa tài liệu HTML và một tài liệu bên ngoài, thường thì đó là 
+những file CSS hoặc các file hình ảnh. Thẻ này rất quan trọng 
+trong SEO, nó giúp các công cụ tìm kiếm biết được link liên kết 
+đến các đường dẫn bên ngoài liên quan đến bài viết.
+- Thẻ link thường được đặt trong phần head, nó có thuộc tính 
+rel và type giúp biết được thể loại của liên kết.
+    <link href="URL" type="type" rel="rel"/>
+    Thuộc tính của thẻ link:
+- href - đường dẫn tới file css cần liên kết.
+- rel - chỉ định mối quan hệ giữa tài liệu hiện tại và tài liệu
+liên kết.
+
+----------------------------------------------------------------------
+
+* Thẻ meta trong HTML
+
+- Thẻ meta sẽ mô tả thông tin về trang, từ khóa, mô tả về tác giả, 
+lần sửa cuối cùng.. cho tài liệu HTML. Qua đó, các công cụ tìm 
+kiếm sẽ biết được các thông tin này và sẽ giúp người dùng tìm 
+được nội dung trên internet một cách dễ dàng.
+- Các thông tin mà thẻ meta mô tả sẽ không hiển thị trên trang mà 
+sẽ được máy tính phân tích và lưu vào bộ nhớ.
+    <meta name="name" content="content">
+- Trong đó name chính là tên của meta (thể loại), content chính 
+là nội dung của meta. Nếu bạn đang học HTML và CSS căn bản thì có 
+thể chưa cần quan tâm đến thẻ này. Nhưng sau này khi public trang 
+web lên internet thì phải đặc biệt chú ý đến nó.
+- Sử dụng thẻ meta để định nghĩa các thông tin về trang HTML.
+    <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="John Doe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    Trong đó:
+        Thẻ meta description sẽ mô tả nội dung chính của trang.
+        Thẻ meta keywords sẽ mô tả các từ khóa chính của trang.
+        Thẻ meta author sẽ khai báo tác giả cho bài viết.
+        Thẻ meta viewport sẽ khai báo cách hiển thị trang web lên trình duyệt.
+
+----------------------------------------------------------------------
+
+* Thẻ script trong HTML
+
+- Thẻ script sẽ định nghĩa các đoạn mã Javascript nằm trong nó. 
+Phần mã script có thể chứa các câu lệnh Javascript hoặc liên kết 
+tới một file Javascript nào đó bên ngoài.
+- Nếu tài liệu html không có sử dụng javascript thì bạn không cần 
+phải khai báo thẻ script.
+- Thẻ này có thể đặt ở bất kì đâu trên trang web. Tuy nhien, thường thì người ta sẽ đặt ở trong thẻ head hoặc phía cuối cùng của trang.
+    <script>
+        // Mã JS
+    </script>
+
+----------------------------------------------------------------------
+
+* Thẻ noscript trong HTML
+
+- Thẻ noscript thì ngược lại, nó sẽ tạo một nội dung thay thế để 
+hiển thị cho người dùng nếu trình duyệt đã tắt chức năng biên dịch 
+script. Nghe có vẻ kì lạ, nhưng sự thật thì hầu hết các trình duyệt 
+đều hỗ trợ tính năng tắt mã javascript.
+- Ví dụ bạn có một file javascript rất quan trọng, lúc này bạn sẽ 
+hiện thị một thông báo cho người dùng khi họ tắt javascript trên 
+trình duyệt, bởi trang web sẽ không hoạt động đúng như mong đợi.
+    <noscript>Vui lòng bật tính năng biên dịch Javascript lên!</noscript>
+- Thực tế thì thẻ này rất ít khi sử dụng, bởi không có người dùng 
+nào lại đi hạn chế một tính năng quan trọng như vậy trong quá trình 
+sử dụng web.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+        </head>
+        <body>
+            <h1>Học lập trình miễn phí tại freetuts.net</h1>
+            <script>
+                document.write("freetuts.net")
+            </script>
+            <noscript>Trình duyệt của bạn không hỗ trợ javascript!</noscript>
+        </body>
+    </html>
+
+----------------------------------------------------------------------
