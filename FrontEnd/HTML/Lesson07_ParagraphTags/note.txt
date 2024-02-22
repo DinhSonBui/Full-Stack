@@ -1,0 +1,21 @@
+* Thẻ p trong HTML
+
+- Thẻ p có chức năng định nghĩa một đoạn văn bản.
+- Trình duyệt sẽ tự động thêm một khoảng trắng( lề) vào trước và 
+sau mỗi thẻ p. Lề có thể được tùy chỉnh bằng CSS
+
+--------------------------------------------------------------------
+
+* Thẻ br trong HTML
+
+- Thẻ br có tác dụng ngắt dòng hiện tại và chuyển sang một dòng mới.
+- Thẻ br không có thẻ đóng.
+
+--------------------------------------------------------------------
+
+* Thẻ pre trong HTML
+
+- Thẻ pre sẽ định nghĩa một đoạn văn bản được định dạng sẵn.
+- Văn bản trong cặp thẻ pre sẽ hiển thị bằng phông chữ chiều rộng 
+cố định( thường là Courier), nó sẽ giữ nguyên cả các khoảng trắng 
+và các ngắt dòng.
