@@ -1,0 +1,59 @@
+* Thẻ ul trong HTML
+
+- Thẻ ul sẽ định nghia một danh sách không định rõ thứ tự. Sử dụng 
+kết hợp thẻ ul với thẻ li để tạo danh sách không đánh số. Nếu bạn 
+muốn tạo danh sách đánh số thì phải sử dụng thẻ OL
+        <ul>
+            <li>PHP</li>
+            <li>Javascript</li>
+            <li>Css</li>
+            <li>HTML</li>
+        </ul>
+
+-------------------------------------------------------------------
+
+*Thẻ ol trong HTML
+
+- Đây là thẻ tạo danh sách với định dạng số.
+- Thẻ ol sẽ xác định một danh sách có thử tự, thứ tự sẽ được đánh 
+theo số hoặc chữ cái.
+- Sử dụng thẻ li để xác định các mục trong danh sách.
+- Các thuộc tính của thẻ ol HTML : Thẻ này có 3 thuộc tnihs cơ bản 
+như sau:
+    + reversed - danh sách sẽ được sắp xếp từ cao xuống thấp.
+    + start - giá trị số bắt đầu của danh sách.
+    + type - chỉ định loại kí tự đánh dấu dùng trong danh sách.
+
+-------------------------------------------------------------------
+
+* Thẻ li trong HTML
+
+- Thẻ li có chức năng định nghĩa một mục trong danh sách. Nó là một 
+thẻ con, nằm bên trong hai thẻ cha là ol hoặc ul. Khi bạn cố tình 
+đặt nó đứng riêng một mình thì sẽ bị lỗi sai cấu trúc HTML.
+
+-------------------------------------------------------------------
+
+* Thẻ dl trong HTML
+
+- Thẻ dl có chức năng mô tả một danh sách các định nghĩa.
+- Sử dụng kết hợp với thẻ dd( mô tả nội dung định nghĩa) và thẻ dt 
+(mô tả tên của định nghĩa).
+
+--------------------------------------------------------------------
+
+* Thẻ dt trong HTML
+
+- Thẻ dt có chức năng mô tả tên khái niệm, định nghĩa trong danh 
+sách mô tả các định nghĩa.
+- Sử dụng kết hợp với thẻ dd( mô tả nội dung của định nghĩa) và thẻ 
+dl (mô tả danh sách các định nghĩa).
+
+--------------------------------------------------------------------
+
+* Thẻ dd trong HTML
+
+- Thẻ dd có chức năng mô tả nội dung của khái niệm, định nghĩa trong
+danh sách mô tả các định nghĩa.
+- Sử dụng kết hợp với thẻ dt( mô tả tên định nghĩa) và thẻ dl (mô tả
+danh sách các định nghĩa).
