@@ -1,0 +1,512 @@
+* CSS là gì?
+
+- CSS là chữ viết tắt của cụm từ tiếng Anh "Cascading Style Sheet", 
+dịch ra tiếng Việt thì thực sự mình cũng không thể dịch cho chuẩn 
+được, , nhưng về ý nghĩa thì CSS dùng để trình bày bổ cục của một 
+Website dựa vào các thẻ HTML.
+- Nhóm các thể loại của CSS :
+    Background: CSS tùy chỉnh hình nền
+    Text: CSS tùy chỉnh cách hiển thị đoạn text
+    Font: CSS tùy chỉnh kích thước, kiểu chữ
+    Link: CSS tùy chỉnh link
+    List: CSS tùy chỉnh danh sách
+    Table: CSS tùy chỉnh bảng
+    Box model: Mô hình box model kết hợp padding, margin, border.
+
+-------------------------------------------------------------------------------------------------------------
+
+* Cú pháp CSS - các cách viết CSS
+
+- Cú pháp CSS : Chúng ta chia một đoạn mã CSS ra gồm hai phần đó là:
+    selector: selector sẽ trỏ đến những đối tượng (html) chịu ảnh hưởng bởi CSS
+    declaration: các thuộc tính CSS dùng để style cho thẻ selector 
+- Viết CSS ở đâu?: Chúng ta có ba cách viết CSS đó là viết:
+    inline: viết trực tiếp trên thẻ thông qua thuộc tính style
+    external: viết riêng một thẻ có phần đuôi .css rồi sau đó import vào bằng thẻ link.
+    internal: viết tại file html hiện tại và nằm trong thẻ style
+
+-------------------------------------------------------------------------------------------------------------
+
+* Selector là gì? Tìm hiểu CSS Selector căn bản
+
+- Selector nếu dịch tiếng anh thì có nghĩa là "người chọn" cheeky . Tuy nhiên trong CSS thì selector dùng
+để truy vấn đến các thẻ HTML. 
+-  Các CSS selector thông dụng : Có rất nhiều loại selector nhưng trong bài này chúng ta tìm hiểu một vài 
+cách về DOM selector nhé. Trong bài này chúng ta chỉ tìm hiểu ba cách chính đó là:
+    CSS Selector phân cấp
+    CSS Selector ID
+    CSS Selector Class
+
+-----------------------------------------------------------------------------------------------------------
+
+* Thiết lập màu nền với CSS background
+
+- CSS thiết lập màu nền cho background : Để thiết lập màu nền cho background thì ta sử dụng thuộc tính CSS 
+backgroud-color hoặc background với giá trị của nó là màu sắc của background. Bạn có thể sử dụng mã màu hoặc 
+tên màu bằng tiếng anh đều được.
+    body{
+        background-color: red;
+    }
+-  CSS thiết lập hình nền cho backround : Thiết lập hình nền thì ta sử dụng thuộc tính CSS backgrond hoặc 
+background-image với tham số truyền vào là URL của hình ảnh.
+    body{
+        background-image: url('https://freetuts.net/upload/config/images/hoc-lap-trinh-online.png');
+    }
+- Cho phép lặp hoặc không lặp background : Ta sẽ sử dụng thuộc tính background-repeat và thuộc tính này 
+gồm các giá trị:
+    no-repeat : không lặp
+    repeat : cho phép lặp
+    repeat-x : lặp theo chiều ngang
+    repeat-y : lặp theo chiều đứng
+    body{
+        background-image: url('https://freetuts.net/upload/config/images/hoc-lap-trinh-online.png');
+        background-repeat: no-repeat;
+    }
+- Thiết lập vị trí hiển thị cho background : Trường hợp bạn sử dụng background không lặp và bạn 
+muốn background hiển thị ở một ví trí nào đó như center, left, right, ... thì bạn sử dụng thuộc 
+tính background-position. Cấu trúc của nó là: background-position: position1 position2
+    Trong đó position1 và position2 gồm các giá trị sau:
+    bottom: ở dưới
+    left: bên trái
+    right: bên phải
+    center: ở giữa
+    top: ở trên
+- Thiết lập background đứng im khi scroll (fixed background) : Nếu màn hình dài quá thì khi bạn 
+lăn chuột background sẽ kéo theo nên nếu bạn muốn nó đứng im thì có thể sử dụng thuộc tính 
+background-attachment. Thông thường chúng ta sử dụng hai thuộc tính:
+    fixed: sẽ đứng im
+    scroll: sẽ di chuyển theo khi kéo
+- Sử dụng thuộc tính background nâng cao : Nếu bạn cảm thấy các thông số thiết lập background 
+quá dài thì có thể sử dụng thuộc tính background ở dạng ghi tắt.
+    body
+    {
+        height: 1000px;
+        background: url('https://freetuts.net/upload/config/images/hoc-lap-trinh-online.png') no-repeat 
+        bottom fixed;
+    }
+
+-------------------------------------------------------------------------------------------------------
+
+* Tìm hiểu về color trong CSS
+
+- Sử dụng màu trong CSS như thế nào : Để sử dụng màu trong CSS chúng ta có thể sử dụng tên màu (
+color name) hoặc giá trị RGB, Hex, HSL, RGBA, HSLA. Mình sẽ đi qua chi tiết từng cái một
+    selector {
+        color: color name;
+    }
+
+-------------------------------------------------------------------------------------------------------
+
+* Tìm hiểu về font trong CSS
+
+- Một số thuộc tính chính của font : CSS hổ rất nhiều thuộc tính font để định dạng chữ. Tuy nhiên 
+hôm nay mình chỉ giới thiệu các thuộc tính hay sử dụng đó là: font-family, font-size, font-weight,
+font-style.
+- font-family là thuộc tính quyết định loại font nào sẽ được áp dụng. 
+    selector {
+        font-family: giá trị;
+    }
+- font-size là thuộc tính dùng để thiết lập kích cỡ của chữ.
+    selector {
+            font-size: giá trị;
+    }
+- font-weight là thuộc tính dùng để thiết lập độ đậm của chữ. font-weight có thể sử dụng một trong 
+hai loại sau:
+    Bằng số: 100, 200, 300, 400, 500, 600, 700,800, 900
+    Bằng chữ: normal, bold, lighter....
+    Trong đó:
+        normal: chữ sẽ hiển thị bình thường, đây cũng là giá trị mặc định và tương đương với 400.
+        bold: chữ sẽ hiển thị  đậm, tương đương 700.
+        bolder: chữ cái sẽ đậm hơn phần tử cha của nó.
+        lighter: chữ cái sẽ nhạt hơn chữ cái của phần tử cha.
+        Độ đậm sẽ tăng dần từ 100 đến 900.
+    Selector {
+        font-weight: giá trị;
+    }
+- font-style là thuộc tính dùng để thiết lập chữ in thường hoặc in nghiêng, đơn giản vậy thôi :)
+    Selector {
+        font-style: giá trị;
+    }
+
+----------------------------------------------------------------------------------------------------
+
+* Các thuộc tính CSS định dạng text
+
+- Chon màu cho chữ với color : Ta sử dụng thuộc tính color để gán màu sắc cho chữ.
+- Thiết lập chữ in hoa và in thường : Nếu bạn muốn một thẻ nào đó luôn luôn hiển thị in hoa hoặc 
+luôn luôn hiển thị in thường mặc dù ta nhập vào là hoa hay thường thì sử dụng thuộc tính 
+text-transform với các thuộc tính:
+    uppercase: chuyển đổi in hoa
+    lowercase: chuyển đổi in thường
+    none: không chuyển đổi gì cả (mặc định)
+-  Thiết lập vị trí của text (giữa, trái, phải): Nếu bạn muốn đoạn text hiển thị ở gữa màn hình
+hoặc bên trái, bên phải thì sử dụng thuộc tính text-align với các giá trị:
+    center : hiển thị ngay giữa
+    left: hiển thị bên trái
+    right: hiển thị bên phải
+    justify : hiển thị canh đều so với lề phải và lề trái
+- Thiết lập gạch  chân cho chữ: Để gạch chân cho chữ thì bạn sử dụng thuộc tính text-decoration 
+với giá trị:
+    underline: gạch chân
+    none: bỏ gạch chân
+- Xác định vị trí hiển thị chữ với text-indent : Nếu bạn muốn chữ hiển thị ở một vị trí nào đó 
+tính từ góc trái trên cùng (tính theo pixels) thì bạn dùng thuộc tính text-indent. Thuộc tính 
+này thường dùng để gắn trong nội dung thẻ a của logo và sau đó dùng nó để ẩn text đi. Ta sử dụng 
+text-indent và giá trị của nó là số pixel lớn hơn kích thước màn hình (tính theo số âm).
+Ta sử dụng text-indent và giá trị của nó là số pixel lớn hơn kích thước màn hình (tính theo số âm).
+    .hide-text{
+        text-indent: -9999px
+    }
+
+-------------------------------------------------------------------------------------------------
+
+* Các thuộc tính CSS định dạng thẻ a (links)
+
+- Chọn màu sắc cho thẻ a : Mặc định thẻ a nó có màu tím tím nên để chọn màu sắc thì bạn sẽ nhớ 
+đến thuộc tính color và selector của thẻ a thì chính là tên của nó luôn a.
+    a{
+        color: blue
+    }
+-   Tắt gạch chân thẻ a với text-decoration : Thông thường khi bạn tạo thẻ a thì theo mặc định nó 
+có gạch chân nên để tắt gạch chân thì bạn sử dụng thuộc tính text-decoration:none.
+    a.non-textdecoration{
+        color: red;
+        text-decoration: none;
+    }
+
+- Chọn background cho thẻ a: 
+    a{
+        background: blue;
+        color:#FFF; /*white*/
+    }
+- Style các sự kiện (hover, visited, active, link): Các sự kiện này xay ra khi chúng ta dùng chuột
+thao tác lên nó.
+    hover: Khi bạn hover chuột qua nó sẽ có tác dụng
+    visited: khi ạn click vào the a thì trạng thái của thẻ a đó là visited.
+    active: Khi ạn click vào thẻ a nhưng nhấn giữ chuột
+    link: thẻ a nào bạn chưa click lần nào thì nó sẽ có tác dụng
+
+----------------------------------------------------------------------------------------------------
+
+* Border trong CSS
+ 
+- Border là thuộc tính CSS dùng để tạo đường viền bao quanh nội dung của phần tử HTML, nó nằm giữa 
+padding và margin. Ở bài này các bạn khoan hãy quan tâm đến padding, margin là gì nha, mình sẽ có 
+một bài khác nói về padding và margin.
+- Các thuộc tính của border : border-style là thuộc tính để thiết lập loại border nào sẽ được hiển
+thị.hững style chính là border hổ trợ như sau:
+    dotted - border sẽ hiển thị là những dấu chấm
+    dashed - border sẽ hiển thị nét đứt
+    solid - border sẽ hiển thị đường thẳng liền mạch
+    double - border sẽ hiển thị 2 đường thẳng
+    groove - border sẽ hiển thị dạng rãnh 3D.
+    ridge - border sẽ hiển thị dạng viền 3D.
+    inset - border sẽ hiển thị dạng viền trong 3D. 
+    outset - border sẽ hiển thị dạng viền đầu 3D. 
+    none - sẽ không có border
+    hidden - border sẽ  bị ẩn.
+- border-width : là thuộc tính để thiết lập độ rộng của border. Các bạn có thể sử dụng CSS Unit 
+như pt, px, em, rem ...  hoặc là có thể dùng 3 giá trị sau: thin, medium, thick.
+    selector {
+        border-width: giá trị;
+    }
+- border-color : là thuộc tính để thiết lập màu sắc cho border. Color có thể có giá trị là name, 
+rgb, hex...
+- border-radius :  là để thiết lập bo tròn cho border
+- Border Shorthand : là cách viết ngắn gọn cho 3 thuộc tính border-width, border-style và border-color.
+    selector {
+        border: width style color;
+    }
+
+---------------------------------------------------------------------------------------------------
+
+* Thuộc tính float ( left - right - none) trong CSS
+
+- Như các bạn biết, hiện nay người ta sử dụng thẻ div và các thẻ HTML5 như thẻ header, footer, 
+article để chia layout. Nhưng bản chất các thẻ đó lại hiển thị dạng block nên không thể chia ra 
+các khối header, footer, sidebar như giao diện design được. 
+- Để giải quyết vấn đề này thì ta sử dụng thuộc tính float trong css. Chúng ta có ba giá trị của 
+float hay sử dụng nhất đó là:
+    left: Nằm phía bên trái
+    right: Nằm phía bên phải
+    none: Nằm tại chính vị trí của nó (trạng thái bình thường)
+
+------------------------------------------------------------------------------------------------------
+
+* Thuộc tính display trong CSS (inline - block -none)
+
+- Phân biệt display inline - block của thẻ HTML
+    + Inline: Là cách hiển thị trên một hàng và chiều rộng của thẻ đó sẽ phụ thuộc vào nội dung 
+    bên trong của thẻ. Vì vậy nhiều thẻ có thể nằm trên cùng một hàng và một số thuộc tính CSS 
+    không sử dụng được như thuộc tính margin-top, margin-bottom. Các thẻ HTML được hiển thị mặc 
+    định inline là: span, a, strong, b, i, ...
+    + Block: Là cách hiển thị chiêm một khoảng rộng (một khối) và có chiêu rộng bằng 100%. Vì vậy 
+    khi bạn dùng thẻ này thì mặc dù nội dung ngắn nhưng các thẻ khác ở phía dưới vẫn phải nằm ở vị 
+    trí bên dưới nó. Các thẻ HTML hiển thị mặc đinh block là: div, p, h1 -> h6, header, footer, 
+    section, nav, ...
+    + Inline-block : Là cách hiển thị kết hợp cả hai cách trên, nghĩa là bạn có thể sử dụng CSS để chia 
+    khổi và nằm cùng trên cùng một hàng. Thuộc tính này thường được sử dụng khi bạn muốn một thẻ hiển 
+    thị dạng khối và có thể nằm trên cùng một hàng.
+- Ẩn thẻ HTML với thuộc tính display none : Nếu bạn muốn ẩn một thẻ HTML nào đó thì bạn sẽ sử dụng 
+thuộc tính display:none, vì nó ẩn thẻ cấp cao nhất nên tất cả các thẻ con của nó cũng sẽ ẩn theo. 
+- Thay đổi giá trị display cho các thẻ HTML : Nếu bạn muốn thay đổi cách hiển thị inline, block, 
+inline-block, none cho các thẻ HTML thì bạn chỉ cần sử dụng thuộc tính CSS: Nếu bạn muốn thay đổi 
+cách hiển thị inline, block, inline-block, none cho các thẻ HTML thì bạn chỉ cần sử dụng thuộc tính 
+CSS:
+    display: value
+
+---------------------------------------------------------------------------------------------------
+
+* Thuộc tính margin - padding và Box Model trong CSS
+
+-  Thuộc tính margin và padding trong CSS
+    + Margin: Dùng để tạo khoảng cách giữa hai thẻ HTML, xem hình dưới đây
+    + Padding : Dùng để tạo khoảng giữa thẻ HTML và nội dung của nó, xem hình dưới đây:
+
+----------------------------------------------------------------------------------------------------
+
+* Position relative - absolute trong CSS
+
+- Thuộc tính position trong CSS dùng để xác định vị trí hiển thị cho thẻ HTML và thường được dùng 
+để xây dựng CSS cho menu đa cấp, tooltip hoặc một số chức năng khác.
+- Position có tổng cộng 5 gias trị như bảng dưới đây nhưng trong bài này mình chỉ trình bày hai 
+thuộc tính đó là relative và absolute.
+    + static : Dạng mặc định - sẽ hiển thị theo đúng thứ tự của nó (thường dùng để hủy các thuộc 
+    tính bên dưới)
+    + relative : Định vị trí tuyệt đối (vị trí bao ngoài), lúc này các thẻ HTML bên trong sẽ coi 
+    nó là thẻ cha
+    + absolute: Định vị trí tương đói theo thẻ cha (thẻ khai báo relative) hoặc thẻ body nếu ko 
+    có khai báo
+    + fixed : Định vị trí tương đối cho của sổ Browser của trình duyệt (khi kéo scroll nó sẽ 
+    không bị ẩn đi)
+    + inherit : Thừa hưởng các thuộc tính từ thành phần cha (thành phần bao ngoài nó)
+- Ta có thể ví relative như một cái khung và absolute là một hòn bi di chuyển bên trong cái khung 
+nên nó có thể lăn tới bất kì vị trí nào, thậm chí nó có thể lăn ra bên ngoài khung. Và để thiết lập
+ vị trí thì ta sử dụng bốn thuộc tính sau:
+    top: lên phía trên
+    right: qua bên phải
+    bottom: xuống phía dưới
+    left: qua bên trái
+
+----------------------------------------------------------------------------------------------------
+
+* Position Fixed trong CSS
+
+- Tương tự như thuộc tính Absolute, Fixed cũng hoạt động dựa vào một thẻ cha làm chuẩn bên ngoài. 
+Chỉ có khác một điều là đối với Fixed thì khi bạn scrolling thì nó sẽ nằm luôn trên màn hình ngay 
+tại vị trí chuẩn đó và đè lên trên các phần tử bên dưới.
+
+-----------------------------------------------------------------------------------------------------
+
+* Thuộc tính z-index trong CSS
+
+- Thuộc tính z-index được sinh ra nhằm giải quyết cấp độ hiển thị của các thẻ HTML lên trình duyệt 
+Browser, hay nói cách khác z-index giống như đánh số thứ tự hiển thị, thẻ nào có z-index cao thì 
+nằm phía trên và thẻ nào có z-index thấp thì nằm phía dưới.
+- Tuy nhiên không phải lúc nào cũng sử dụng được z-index nên bạn phải biết các tính chất sau:
+    + Bạn chỉ thiết lập z-index được cho các thẻ có khai báo position:absolute.
+    + Giá trị của z-index là một con số (âm hoặc dương).
+    + Hai thẻ có cùng z-index thì sẽ tuân theo quy luật thẻ nào nằm dưới thì được hiển thị phía 
+    trên, thẻ con sẽ nằm trên thẻ cha.
+    + Giá trị z-index mặc định của các thẻ HTML là 1, vì vậy các thẻ HTML thông thường nếu nằm 
+    phía dưới thì nó sẽ đè thẻ phía trên.
+
+-------------------------------------------------------------------------------------------------------
+
+* Kỹ thuật ClearFix trong CSS
+
+- Kỹ thuật ClearFix trong CSS là cách sử dụng các thuộc tính CSS để điều chỉnh vùng không gian 
+của thẻ cha so với các thẻ con có sử dụng float. Tại vì khi bạn sử dụng float thì chiều cao của 
+thẻ cha sẽ được tính là 0px so với thẻ con float đó, điều này nghĩa chiều cao của thẻ cha sẽ được 
+tăng lên khi nội dung bên trong của nó không có sử dụng float.
+
+---------------------------------------------------------------------------------------------------
+
+* After và Before trong CSS
+
+- After và Before trong CSS: Bạn có thể bổ sung bất cứ gì đằng trước và đằng sau thẻ HTML bằng 
+cách sử dụng after và before. Cú pháp của nó như sau:
+    selector:after{
+        
+    }
+    selector:before{
+        
+    }
+    + After trong CSS : After dùng để thêm nội dung vào đằng sau thẻ HTML.
+    + Before trong CSS: Before dùng để thêm nội dung vào đằng trước thẻ HTML.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <style>
+                .title:after{
+                    content : " freetuts.net"
+                }
+            </style>
+    
+        </head>
+        <body>
+            <div class="title">Chào mừng bạn đến với</div>
+        </body>
+    </html>
+- Một số lưu ý khi sử dụng after và before trong CSS
+    + Lưu ý 1: Nội dung mà bạn thêm vào bằng thuộc tính after hoặc before sẽ không thể dùng chuột 
+    bôi đen và copy được, không tin bạn hãy copy những dòng chữ ở hai ví dụ trong phần 1.
+    + Lưu ý 2: Ta có thể coi After và Before giống như hai thẻ HTML bình thường nên bạn có thể sử 
+    dụng hầu hết các thuộc tính CSS trên chúng.
+
+---------------------------------------------------------------------------------------------------
+
+* Vùng chọn trong CSS (CSS Combinators)
+
+- CSS Combinators là gì? : CSS combinators mình hiểu đơn giản là mối liên hệ giữa các selector.
+Cũng như con người chúng ta cũng có liên hệ với nhau như cha con, ông cháu, anh chị em.. Selector 
+cũng vậy nó đều có mối liên hệ với các selector khác. 
+- Cách sử dụng CSS Combinators
+    + Descendant selector (space) : Space (khoảng trắng) có ý nghĩa là chọn tất cả những thẻ con 
+    nằm trong một selector nào đó.
+    + Child selector (>) : Child selector (>) có ý nghĩa là chọn tất cả  những thẻ con trực tiếp 
+    của một selector nào đó. Nghĩa là thẻ con nằm vô trong đúng một cấp so với selector đó.
+    + Adjacent sibling selector (+) : Adjacent sibling selector (+) có ý nghĩa là chọn tất cả 
+    những thẻ anh/chị/em ruột nằm liền kề ngay sau một selector nào đó. Mình hiểu mối liên hệ  
+    anh/chị/em ruột giữa selectors cũng giống như mối liên hệ anh/chị/em ruột của  con người chúng 
+    ta là phải cùng chung một cha theo đúng nghĩa đen nha..
+    + General sibling selector (~) : General sibling selector (~) có ý nghĩa là chọn tất cả những 
+    thẻ anh/chị/em của selector nào đó. Tuy nhiên những thẻ này phải nằm phía sau selector đó.
+
+----------------------------------------------------------------------------------------------------
+
+* Tìm hiểu về list trong CSS
+
+- Danh sách (list) trong CSS là gì? : List trong HTML có 2 loại chính đó là:
+    + Danh sách có thứ tự (ordered list). Đánh dấu mục của danh sách có thứ tự mặc định là số và 
+    bắt đầu bằng 1.
+    + Danh sách không có thứ tự (unordered list). Đánh dấu mục của danh sách không có thứ tự mặc 
+    định là dấu chấm màu đen.
+- CSS có những thuộc tính như list-style-type, list-style-image, list-style-position cho phép thay 
+đổi biểu tượng đánh dấu danh mục của danh sách. Vậy cách sử dụng những thuộc tính này như thế nào, 
+mình cùng xem tiếp phần 2 nhé.
+- Một số thuộc tính chính của list: 
+    + list-style-type: à thuộc tính cho phép chỉ định loại đánh dấu mục của danh sách nào sẽ được 
+    hiển thị, ví dụ như là hình tròn, hình vuông, chữ la mã ... list-style-type có rất nhiều giá 
+    trị, tuy nhiên mình chỉ giới thiệu những giá trị hay sử dụng sau:
+        circle: giá trị hiển thị là hình tròn
+        square:  giá trị hiển thị là hình vuông
+        upper-roman: giá trị hiển thị là chữ la mã hoa như I, II, II, IV ...
+        lower-roman: giá trị hiển thị là chữ la mã thường như i, ii, iii, iv ...
+        upper-latin: giá trị hiển thị là chữ cái latin hoa như A, B, C ...
+        lower-alpha: giá trị hiển thị là chữ cái alphabet như a, b, c ...
+        none: không hiển thị gì cả
+        decimal: giá trị hiển thị là số như 1, 2, 3 ...
+        decimal-leading-zero: giá trị hiển thị là số nhưng sẽ thêm số 0 phía trước số, nếu số < 10 như 01, 02, 03 ...
+        Selector {
+            list-style-type: giá trị;
+        }
+    + list-style-image : là thuộc tính dùng hình ảnh (image) để làm đánh dấu mục của danh sách.
+    + list-style-position :  là thuộc tính dùng để thiết lập vị trí hiển thị của các đánh dấu mục của danh sách.
+    + list-style : là thuộc tính trình bài cách viết ngắn gọn của 3 thuộc tính list-style-type, list-style-image, list-style-position.
+
+---------------------------------------------------------------------------------------------------
+
+* Tìm hiểu về overflow trong CSS
+
+- Trong CSS có thuộc tính overflow cho phép mình khắc phục khó khăn trên bằng cách cắt đi phần
+nội dung bị tràn hoặc thêm thanh cuộn cho phần tử đó.
+- Thuộc tính overflow có nhiều giá trị, tuy nhiên trong bài học này mình sẽ tìm hiểu 4 giá trị 
+hính của thuộc tính overflow đó là visible, hidden, scroll, auto.
+- Các giá trị của overflow
+    + visible : Khi thuộc tính overflow có giá trị  là visible thì phần nội dung bị tràn không bị 
+    cắt đi và nội dung bị tràn ra sẽ ghi đè lên các phần tử khác.
+    + hidden : Khi thuộc tính overflow có giá trị là hidden thì phần nội dung bị tràn ra bị cắt 
+    đi và phần nội dung đó sẽ bị ẩn đi.
+    + scroll : Khi thuộc tính overflow có giá trị là scroll thì phần nội dung bị tràn ra vẫn bị 
+    cắt đi, tuy nhiên trình duyệt sẽ có thêm thanh scroll, mình có thể kéo xem phần nội dung bị 
+    ẩn đi. Thanh scroll này được thêm vào cho cả chiều dọc và chiều ngang của phần tử.
+    + auto : Khi thuộc tính overflow có giá trị là auto thì cũng giống như giá trị scroll, tuy 
+    nhiên thanh scroll sẽ được thêm vào khi cần thiết.
+- overflow-x : overflow-x là thuộc tính cho phép điều khiển nội dung bị tràn theo chiều ngang 
+(nghĩa là bên trái (left) và bên phải (right) của phần tử). Tương tự thuộc tính overflow, thuộc 
+tính overflow-x cũng có giá trị như visible, hidden, auto, scroll.
+- overflow-y là thuộc tính cho phép điều khiển nội dung bị tràn theo chiều dọc (nghĩa là bên 
+trên (top) và bên dưới (bottom) của phần tử). Tương tự thuộc tính overflow, thuộc tính overflow-y 
+cũng có giá trị như visible, hidden, auto, scroll.
+
+-----------------------------------------------------------------------------------------------------------
+
+* Tìm hiểu về pseudo-class trong CSS
+
+- Pseudo-classes dùng để xác định trạng thái đặc biệt của một phần tử.
+- Trong CSS có hỗ trợ một số pseudo-class sau:
+    :active
+    :checked
+    :disabled
+    :empty
+    :enabled
+    :first-child
+    :first-of-type
+    :focus
+    :hover
+    :in-range
+    :invalid 
+    :lang(language) 
+    :last-child
+    :last-of-type
+    :link 
+    :not(selector) 
+    :nth-child(n) 
+    :nth-last-child(n) 
+    :nth-last-of-type(n) 
+    :nth-of-type(n)
+    :only-of-type
+    :only-child
+    :optional
+    :out-of-range
+    :read-only
+    :read-write
+    :required
+    :root
+    :target
+    :valid
+    :visited
+
+-------------------------------------------------------------------------------------------------------------
+
+* Tìm hiểu về Pseudo-Elements trong CSS
+
+- Pseudo-Element được sử dụng để định kiểu các phần được chỉ định của một phần tử.
+- Trong CSS có tất cả các pseudo-element sau ::first-line, ::first-letter, ::before, ::after, ::selection
+
+-------------------------------------------------------------------------------------------------------------
+
+* Tìm hiểu về unit trong CSS
+
+- Unit trong CSS là đơn vị đo của các thuộc tính trong CSS như margin, padding, width, height...
+- Ý nghĩa của từng loại đơn vị (unit)
+    + Absolute: Absolute là loại đơn vị có giá trị không thay đổi dù cho bất cứ kỳ đâu, nhưng chỉ khi thiết 
+    bị đầu ra của bạn có độ phân giải đủ cao. Trên máy in laser, 1cm phải chính xác 1 centimet (centimet của 
+    thước đo vật lý). Một số đơn vị tuyệt đối (absolute) trong CSS như sau:
+        cm: centimet
+        mm: milimet
+        in: inch, 1in = 96px = 2.54 cm
+        px: 1px tương ứng với một điểm ảnh trên máy tính. 1px = 1/96 in
+        pt: 1pt =1/71in
+        pc: 1pc =12pt
+    + Relative : Relative là loại đơn vị sẽ có giá trị tương đối so với độ dài của thuộc tính. Một số đơn vị 
+    tương đối (relative) trong CSS như sau:
+        em: Tương đối so với  font-size của phần tử cha.
+        ex: Tương đối so với x-height của font hiện tại.
+        ch:  Relative to width of the "0" (zero)
+        rem: Tương đối so với phần tử gốc. Phần tử gốc ở đây là thẻ html.
+        vw: Tương đối 1%  width của kích thước cửa sổ trình duyệt (viewport).
+        vh: Tương đối 1% height của kích thước cửa sổ trình duyệt (viewport).
+        vmin Relative to 1% của kích thước cửa sổ trình duyệt nhỏ hơn
+        vmax Relative to 1% của kích thước cửa sổ trình duyệt lớn hơn
+        %: Có giá trị tương đối so với phần tử cha.
+
+
+
+
+
+
+
+
