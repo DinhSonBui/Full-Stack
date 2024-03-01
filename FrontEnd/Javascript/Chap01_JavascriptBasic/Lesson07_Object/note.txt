@@ -1,0 +1,198 @@
+Đối tượng / Object trong Javascript
+
+- Kể từ phiên bản ES6 - 2015 thì đã xuất hiện khái niệm lập trình hướng đối tượng trong 
+javascript, bởi ta có thể tạo class, thêm phương thức và thuộc tính cho class, thậm chi 
+là có thể tạo class kế thừa từ class khác. Tuy nhiên, vì các bạn đang học căn bản nên 
+chúng ta hãy thảo luận về object javascript một cách đơn giản nhất nhé.
+- Đối tượng / Object trong Javascript?
+    + Trong Javascript, object là một khái niệm trừu tượng, được dùng thể hiện cho các đối 
+    tượng mà qua đó ta có thể thêm các thuộc tính và phương thức cho đối tượng đó.
+    + Chúng ta có sẵn một số đối tượng như Date, Number. Ngoài những đối tượng này thì lập 
+    trình viên có thể tự tạo một đối tượng theo ý của mình.
+- Cú pháp khởi tạo đối tượng như sau:
+    + Cách 1: Sử dụng từ khóa new Object()
+        var Comment = new Object();
+    + Cách 2: Sử dụng từ khóa {}
+        var Comment = {};
+- Khi chúng ta khai báo một object thì tức là chúng ta đang tạo một instance của 
+đối tượng Object, tức là đối tượng Object bản thân nó là một constructor. Vì vậy, 
+ta không thể sử dụng từ khóa new để tạo ra một instance từ một instance được.
+    var Comment = {};
+    // Sai, vì Comment là một instance và
+    // không phải là constructor
+    var comment = new Comment()
+- Thuộc tính / phương thức của object trong javasript
+    + Mỗi đối tượng sẽ có các thuộc tính và phương thức.
+    + Thuộc tính: Thuộc tính là những đặc điểm (có thể hiểu là biến) cần lưu trữ 
+    trong đối tượng. Ví dụ với đối tượng Comment thì mình cần các thuộc tính sau. 
+    title,content,fullname, email
+        Cách 1: Sử dụng từ khóa new Object()
+            // Khởi tạo
+            var Comment = new Object();
+            // Thêm thuộc tính
+            Comment.title = '';
+            Comment.content = '';
+            Comment.fullname = '';
+            Comment.email = '';
+        Cách 2: Sử dụng từ khóa {} và thêm thuộc tính ngay lúc khai báo
+            // Khởi tạo
+            var Comment = {
+                title : "",
+                content : "",
+                fullname : "",
+                email : ""
+            }
+        Cách 3: Sử dụng từ khóa {} và thêm thuộc tính sau đó
+            // Khởi tạo
+            var Comment = {};
+            
+            // Thêm thuộc tính
+            Comment.title = '';
+            Comment.content = '';
+            Comment.fullname = '';
+            Comment.email = '';
+- Phương thức
+    // Khởi tạo
+    var Comment = {
+        addComment : function(){
+            // do some thing
+        },
+        validateComment : function(){
+            // do some thing
+        }
+    };
+-Thao tác với thuộc tính và phương thức của object trong js
+    + Gán giá trị cho thuộc tính
+            Comment.title = "Tiêu đề bình luận";
+    + Lấy giá trị của thuộc tính
+            var title = Comment.title;
+    + Xóa thuộc tính
+            delete Comment.title;
+    + Gọi phương thức
+            comment.addComment();
+- Mảng chứa object - object chứa object
+- Lặp qua từng phần tử của object trong js: Muốn lặp qua từng phần tử của object 
+thì ta sử dụng vòng lặp for .. in.
+            for (key in object) {
+                // key chính là phần tử trong quá trình lặp
+            }
+
+-------------------------------------------------------------------------------------
+
+* Thao tác với đối tượng (Object) trong Javascript
+
+- Viết chương trình quản lý sinh viên gồm các thao tác chính như sau:
+    Xem danh sách sinh viên
+    Thêm sinh viên
+    Xóa sinh viên khỏi danh sách
+    Sửa thông tin sinh viên
+    Với mỗi sinh viên cần lưu trữ các thông tin sau:
+        Mã sinh viên
+        Tên sinh viên
+        Email
+- Hàm xem đối tượng sinh viên : Hàm này khá đơn giản vì ta chỉ lặp qua đối tượng 
+và dùng hàm document.write để hiển thị thông tin.
+- Hàm thêm đối tượng sinh viên
+- Hàm xóa đối tượng sinh viên : Để xóa sinh viên chúng ta cần biết id của sinh 
+viên đó, đồng thời sử dụng hàm splice để xóa phần tử của mảng,
+- Hàm sửa đối tượng sinh viên
+
+------------------------------------------------------------------------------------
+
+* Object Prototype trong Javascript là gì?
+
+- Prototype trong Javascript là gì?
+    + Prototype dịch ra là các nguyên mẫu, nhưng với javascript thì nó là tập hợp 
+    những phương thức và thuộc tính nằm trong đối tượng có tên là prototype, và đối 
+    tượng này tồn tại trong các object.
+    + Vì vậy tất cả các đối tượng trong Javascript đều có một prototype riêng để 
+    lưu trữ các thành phần đó. Lúc này khi bạn tạo mới một instance thì instance 
+    đó sẽ kế thừa tất cả các phương thức và thuộc tính chứa trong prototype của đối 
+    tượng.
+- Thêm thuộc tính và phương thức vào prototype
+    + Các đối tượng trong javascript đều có prototype, nên nếu bạn muốn thêm thuộc 
+    tính hay phương thức vào prototype thì sử dụng cú pháp sau:
+        ObjectName.prototype.property_name = data;
+    + Thêm thuộc tính vào prototype
+        Number.prototype.count = 0;
+        let age = new Number(12);
+        console.log(age);
+    + Thêm phương thức vào prototype
+        // Tạo đối tượng
+        Number.prototype.plus = function(value){
+            return this.valueOf() + parseInt(value);
+        };
+        
+        // Tạo mới đối tượng
+        var age = new Number(12);
+        document.write(age.plus(12) + "<br/>");
+        
+        // Tạo đối tượng khác
+        var year = 2014;
+        document.write(year.plus(12));
+- Prototype trong object và function javascript
+    + Có một cách khác có thể giải quyết được, đó là thông qua hàm trong Javascript.
+     Chúng ta sẽ sử dụng constructor để khởi tạo một hàm thông qua từ khóa new.
+        function Person(){
+            
+            // Thuộc tính
+            this.name = "";
+            this.email = "";
+            this.address = "";
+            
+            // Phương thức
+            this.showInfo = function(){
+                documenet.write("Tên là: " + this.name + "<br/>");
+                documenet.write("Email là: " + this.email + "<br/>");
+                documenet.write("Địa chỉ là: " + this.address + "<br/>");
+            };
+        }
+    + Lúc này muốn tạo mới đối tượng và sử dụng các thuộc tính, phương thức thì ta
+    làm như sau.
+        // Tạo mới
+        var cuong = new Person();
+        
+        // Gán thuộc tính
+        cuong.name = "Nguyễn Văn Cường";
+        cuong.email = "thehalfheart@gmail.com";
+        cuong.address = "Buôn Ma Thuột ĐăkLăk";
+        
+        // Gọi phương thức
+        cuong.showInfo();
+- Prototype trong class javascript
+    + Class được thêm vào từ ES6, nó cũng là một đối tượng, nên nó cũng có các 
+    thuộc tính và prototype.
+        class Student{
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+             
+            showInfor(){
+                console.log(`Tên sinh viên là ${this.name}`);
+                console.log(`Tuổi sinh viên là ${this.age}`);
+            }
+        }
+         
+        let student = new Student("Cường", 32);
+         
+        console.log(student);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
