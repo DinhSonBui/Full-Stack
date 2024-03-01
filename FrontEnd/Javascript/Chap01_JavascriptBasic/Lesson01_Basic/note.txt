@@ -1,0 +1,298 @@
+* Javascript là gì? Tìm hiểu ngôn ngữ lập trình javascript
+
+- Javascript là gì?
+    + Javascript là một ngôn ngữ lập trình kịch bản dựa vào đối tượng phát triển có sẵn hoặc tự định nghĩa. 
+Javascript được sử dụng rộng rãi trong các ứng dụng Website. Javascript được hỗ trợ hầu như trên tất cả 
+các trình duyệt như Firefox, Chrome, ... trên máy tính lẫn điện thoại.
+    + Javascript Framework là một bộ thư viện được xây dựng dựa vào ngôn ngữ lập trình Javascript. Mỗi 
+    framework thường được tạo ra để phục vụ cho \
+    một lĩnh vực nào đó. Ví dụ với Angular và React thì chuyên 
+    xử lý frontend, NodeJS thì chuyên xử lý backend, jQuery là một thư viện rất mạnh khi xử lý DOM HTML và 
+    CSS.
+- Ưu điểm và nhược điểm của Javascript
+    + Ưu điểm của Javascript là gì?
+        Javascript giúp thao tác với người dùng ở phía client và tách biệt giữa các client. Ví dụ 2 người đang truy 
+        cập vào 2 trình duyệt khác nhau thì cả hai đều có những phiên xử lý Javascript khác nhau, không ảnh hưởng 
+        lẫn nhau.
+        Javascript có thể hoạt động trên nhiều nền tảng khác nhau, từ Windows, macOS cho đến các hệ điều hành 
+        trên mobile.
+        Javascript là một ngôn ngữ dễ tiếp cận, bạn sẽ dễ dàng học nó mà không cần phải cài đặt quá nhiều phần 
+        mềm.
+    + Nhược điểm của Javascript là gì?
+        Vì là một ngôn ngữ rất dễ dàng bị soi code nên dễ bị khai thác. Hacker có thể nhập một đoạn code bất 
+        kì vào khung console của trình duyệt, lúc này trình duyệt sẽ hiểu rằng đoạn code đó là chính thống, 
+        nên hacker có thể gửi nhửng request lên server một cách dễ dàng.
+
+---------------------------------------------------------------------------------------------------------------
+
+* Các cách khai báo biến trong Javascript
+
+-  Thứ nhất là dùng từ khóa var, thứ hai là dùng từ khóa const, và cuối cùng là từ khóa let. Tùy vào từng 
+trường hợp mà chọn cách khai báo cho phù hợp.
+- Sử dụng từ khóa let tenbien.
+    let username;
+    Biến loại này chỉ có phạm vi trong khối khai báo mà thôi. Vì vậy nó sẽ tối ưu trong trường hợp bạn cần 
+    khai báo một biến chỉ sử dụng tạm thời trong một phạm vi nhất định. Phạm vi nay ta hay gọi là block scope.
+- Sử dụng từ khóa const tenbien.
+    const username = 'giá trị';
+    Const là một hằng số, vì vậy khi khai báo biến const thì bạn phải gán giá trị cho nó luôn, sau này 
+    cũng không thể thay đổi giá trị cho biến.
+- Cách đặt tên cho biến trong Javascript : Khi đặt tên cho biến thì bạn phải tuân thủ theo những quy tắc dưới đây:
+    + Tên biến phải là các chữ không dấu viết hoa hoặc viết thường, các chữ số từ 0-9 và dấu gạch dưới (_).
+    + Tên biến bắt đầu phải là chữ hoặc dấu gạch dưới (_), nếu bắt đầu bằng số là sai
+    + Tên biến có thể đặt dài hay ngắn tùy vào lập trình viên.
+- Ngoài cách khai báo từng biến đơn lẻ như trên thì bạn có thể gộp nó vào một dòng duy nhất như sau:
+    var username, _username, __username, username90;
+- Cách gán giá trị cho biến trong javascript
+    Để gán giá trị cho biến ta dùng dấu bằng (=) để gán vế phải vào vế trái.
+    Ví dụ. gán giá trị thehalfheart vào biến username thì ta viết là username = 'thehalfheart'.
+-  Kiểu giá trị của biến trong Javascript : Trong Javascript rất hạn chế về kiểu dữ liệu nhưng bù lại cơ chế 
+xử lý kiểu dữ liệu của nó rất linh hoạt, giúp lập trình viên có thể chuyển đổi một cách dễ dàng. Đó là vì 
+mọi kiểu dữ liệu đều có thể quy về đối tượng và mỗi đối tượng ta có thể bổ sung các phương thức xử lý riêng.
+Gán kiểu giá trị cho biến
+    // Biến website đag kiểu String
+    var website = 'thehalfehart';
+    // Biến website chuyển sang kiểu INT
+    website = 12;
+    // Biến website chuyển sang kiểu float
+    website = 12.5;
+
+------------------------------------------------------------------------------------------------------------
+
+* Hàm alert() - confirm() - prompt() trong javascript
+
+- Hàm alert() trong javascript : Hàm alert() có nhiệm vụ in một thông báo popup, nó có một tham số truyền 
+vào và tham số này chính là nội dung ta muốn thông báo với người dùng.
+- Hàm confirm() trong javascript : Hàm confirm() cũng sẽ xuất hiện một thông báo popup nhưng nó có thêm hai 
+sự lựa chọn là Yes và No, nếu người dùng chọn Yes thì nó trả về TRUE và ngược lại nếu chọn NO thì nó sẽ trả 
+về FALSE. Nó cũng có một tham số truyền vào và tham số này chính là nội dung thông báo.
+- Hàm prompt() trong javascript : Hàm prompt() dùng để lấy thông tin từ người dùng, gồm có hai tham số 
+truyền vào là nội dung thông báo và giá trị ban đầu. Nếu người dùng không nhập vào thì giá trị nó sẽ trả về là NULL
+    
+------------------------------------------------------------------------------------------------------------
+
+* Các toán tử trong Javascript
+
+- Toán tử toán học trong javascript : Thông thường chúng ta sử dụng các toán tử toán học như cộng, trừ, nhận,
+chia, chia lấy dư, phép tăng giá trị lên 1 đơn vị, phép giá trị đi 1 đơn vị.. để xử lý thay đổi giá trị các 
+biến trong javascript.
+- Toán tử gán trong javascript : =; +=; -=; *=; /=; %=
+- Toán tử quan hệ trong Javascript : >,<,>=,<=,==,!=
+- Toán tử luận lý trong Javascript: && (and),||(or),! (not)
+- Độ ưu tiên các toán tử trong Javascript
+- Lưu ý với toán tử so sánh bằng Javascript: Chúng ta có hai toán tử so sánh bằng đó là toán tử == và ===
+
+-------------------------------------------------------------------------------------------------------------
+
+* Lệnh if else trong javascript 
+
+- Lệnh if trong javascript
+    Cú pháp lênh if
+    if (condition){
+        // statment
+    }
+    Trong đó condition là mệnh đề điều kiện và luôn luôn phải có một trong hai giá trị là true/false hoặc 
+    giá trị tương đương như:
+        NULL => False
+        Rỗng => False
+        Số khác 0 => TRUE
+        Số 0 => FALSE
+    Trường hợp nếu các câu lệnh bên trong là câu lệnh đơn ( chỉ có một lệnh) thì ta có thể bỏ cặp dấu ngoặc 
+    nhọn. Như với ví dụ trên thì ta sẽ viết lại như sau:
+- Lệnh if else trong javascript
+    + Lệnh else sẽ được thực thi nếu lệnh if không được thực hiện, tức là điều kiện ở condition sẽ có giá trị 
+    là FALSE. Như vậy khi dùng lệnh else thì bắt buộc phải có một lệnh if đứng trước nó.
+    + Cú pháp lệnh if else như sau
+        if (condition){
+            // Code cho lệnh if
+        }
+        else{
+            // Code cho lệnh else
+        }
+- Kết hợp nhiều lệnh if else trong javascript
+    + Cú pháp nhiều lệnh if
+        if (condition1){
+            // Code cho lệnh if 1
+        }
+        else if (condition2){
+            // Code cho lệnh if 2
+        }
+        else{
+            // Code cho lệnh else
+        }
+- Lệnh if else lồng nhau trong javascript
+
+--------------------------------------------------------------------------------------------------------------
+
+* Lệnh switch case trong Javascript
+
+- Lệnh switch case trong Javascript : Lênh switch case có công dụng giống như lệnh if else đó là đều dùng 
+để rẻ nhánh chương trình, ứng với mỗi nhánh sẽ có một điều kiện cụ thể và điều kiện đó phải sử dụng toán tử 
+so sánh bằng, còn đối với lệnh if else thì bạn có thể truyền vào một mệnh đề bất kì và sử dụng nhiều toán tử 
+khác nhau.
+- Cú pháp
+    switch (variable)
+    {
+        case value_1 : {
+            // do some thing
+            break;
+        }
+        case value_2 : {
+            // do some thing
+            break;
+        }
+        default : {
+            // do something
+        }
+    }
+    Nếu như trong tất cả các case không có case nào phù hợp thì nó sẽ chạy lệnh ở default, ngược lại nếu 
+    có case nào phù hợp thì chương trình sẽ chạy trong case đó, đồng thời lệnh break sẽ giúp chương trình 
+    thoát khỏi lệnh switch, còn nếu bạn không thêm lệnh break thì chương trình sẽ tiếp tục kiểm tra và chạy 
+    tiếp ở case tiếp theo.
+- Ví dụ lệnh switch case trong Javascript
+    var color = prompt("Nhập màu cần kiểm tra");
+    switch (color){
+        case 'red' : 
+            document.write("Bạn nhập màu đỏ, đúng rồi đó");
+            break;
+        case 'yellow' : 
+            document.write("Bạn nhập màu vàng, đúng rồi đó");
+            break;    
+    }
+
+-------------------------------------------------------------------------------------------------------------
+
+* Function trong Javascript - cách tạo hàm và gọi hàm trong JS
+
+-  Function trong Javascript là gì? : Function hay còn gọi là hàm, là tập hợp một đoạn code dùng để xử lý 
+một nhiệm vụ nào đó. Code bên trong function không được biên dịch cho tới khi được gọi đến. Chính vì vậy khi 
+sử dụng function sẽ giúp chương trình được linh hoạt hơn.
+- Một ví dụ về lợi ích của function trong Javascript
+- Cách tạo function trong Javascript
+    + Cú pháp:
+        function name_of_function(var1, var2, var3, ...)
+        {
+            // Some code
+        }
+    + Trong đó:
+        + function: là từ khóa của javascript nên bắt buộc phải như vậy
+        + name_of_function: là tên của hàm, thông thường chúng ta tạo những tên có ý nghĩa như find_max, 
+        find_min, ...
+        + var1, var2 var3, ... là các tham số truyền vào hàm. Ví dụ viết hàm kiểm tra số chẵn hay lẽ thì ta 
+        sẽ có một tham số đó là số cần kiểm tra. Đương nhiên bạn có thể tạo một hàm không có tham số.
+- Cách gọi hàm trong Javascript : Để gọi hàm thì ta chỉ cần gọi đến tên hàm, sau đó truyền vào các tham số 
+cần thiết.
+- Hàm có return và hàm không có return :Hàm có return là hàm có sử dụng từ khóa return để đặt ở cuối hàm với 
+mục đích trả kết quả về để sử dụng tiếp ở những đoạn code bên ngoài. Ví dụ ta cần viết một hàm tính tổng của 
+hai số a và b thì hàm này phải trả về giá trị là tổng của hai số a, b. Xem ví dụ sau:
+    // Khai báo hàm
+    function tinh_tong(a, b)
+    {
+        // trả về kết quả là a + b
+        return a + b;
+    }
+    // Sử dụng
+    var so1 = 1;
+    var so2 = 2;
+    // truyền so1 và so2 vào hàm
+    var ketqua = tinh_tong(so1, so2);
+    alert(ketqua);
+- Giá trị mặc định của tham số (default parameter) : Có một số trường hợp bạn muốn một tham số nào đó có 
+thể được truyền hoặc không cần truyền vào đều được, lúc này chúng ta phải sử dụng nó như một tham số mặc 
+định. Javascript không có cú pháp gán giá trị mặc định như PHP mà thay vào đó chúng ta sử dụng toán tử ||.
+    function showMessage(message)
+    {
+        // Nếu message không được truyền vào hoặc giá trị nó là rỗng
+        // thì sẽ được thay thế bằng giá trị 'Không có tin nhắn'
+        message = message || 'Không có tin nhắn <br/>';
+        document.write(message);
+    }
+    // Cách 1: không truyền tham số
+    showMessage();
+    // Cách 2: Truyền tham số
+    showMessage('Chào mừng bạn đến với freetuts.net');
+    Trong đó : Toán tử || gồm hai vế, trong đó nếu vế TRÁI có giá trị rỗng (undefined, null, false, ...) 
+    kết quả sẽ trả về vế PHẢI, ngược lại nó sẽ trả về vế TRÁI.
+- Cách tạo hàm arrow function trong Javascript : Arrow function còn được gọi là hàm mũi tên, tức là ta sẽ 
+tạo hàm bằng cách sử dụng ký tự =>. Cách tạo này xuất hiện kể từ phiên bản ES6.
+    + Cú pháp
+        var name_of_function = (var1, var2, var3, ...) => {
+            // Nội dung function
+        };
+    + Cú pháp cũ
+        function name_of_function(var1, var2, var3, ...)
+        {
+            // Nội dung function
+        }
+
+--------------------------------------------------------------------------------------------------------------
+
+* Biến toàn cục và biến cục bộ trong Javascript
+
+-  Biến cục bộ trong Javascript : Một biến được gọi là cục bộ khi bạn khai báo biến nằm bên trong một hàm 
+cụ thể nào đó, lúc này biến đó sẽ không sử dụng được ở bên ngoài hàm.
+- Biến toàn cục trong Javascript: Biến toàn cục là biến mà bạn khai báo bên ngoài và không nằm bên trong một 
+hàm cụ thể nào cả.
+
+-----------------------------------------------------------------------------------------------------------------
+
+* Kiểm tra lỗi Javascript bằng Firebug (Inspect Element)
+
+- Firebug là gì? : Firebug là một addon dành cho các trình duyệt web Firefox và Chrome, giúp lập 
+trình viên có thể xem tất cả các thông tin về website như:
+    Xem được cấu trúc HTML và CSS.
+    Xem được lỗi Javascript nếu có.
+    Sửa các phần tử HTML và CSS.
+    Xem các request URL gửi lên server.
+    Xem các tham số và header của các request.
+    Nói chung công cụ này là rất cần thiết đối với những bạn lập trình web.
+-  Inspect Element là gì? : Inspect Element là một tính năng có công dụng giống như Firebug, chỉ 
+có điều nó được tích hợp sẵn vào các trình duyệt chứ không cần phải cài đặt trên internet.
+    + Trong đó các tab:
+        Elements Là nơi hiển thị danh sách các thẻ HTML và CSS cho thẻ đó.
+        Console là nơi hiển thị các lỗi javascript, show kết quả khi bạn chạy lệnh console.log.
+        Sources là hiển thị domain các tài nguyên mà trang web hiện tại đang sử dụng.
+        Network là nơi hiển thị danh sách các URL mà trang web đang sử dụng.
+        Các tab còn lại dành cho những bạn có kién thức chuyên sâu hoặc đang viết JS Framework
+
+--------------------------------------------------------------------------------------------------
+
+* Hàm console.log trong Javascript (dùng để xem giá trị của biến)
+
+- Console.log trong Javascript là gì? : Console.log là một hàm của Javascript, được sử dụng để 
+debug / kiểm tra / xem giá trị của một biến trong Javascript. Công dụng của console.log là show 
+ra giá trị của một biến, dù biến đó thuộc kiểu dữ liệu gì đi nữa thì vẫn được hiển thị ở ô console 
+trong hộp thoại Inspect Element.
+- Cú pháp console.log() trong javascript : Lệnh console.log() có cú pháp là console.log(value), 
+trong đó value là một biến hoặc một giá trị mà bạn muốn in ra.
+
+---------------------------------------------------------------------------------------------------
+
+* Hàm setTimeout() và setInterval() trong Javascript
+
+- Hàm setTimeout() dùng để thiết lập một khoảng thời gian nào đó sẽ thực hiện một nhiệm vụ nào 
+đó và nó chỉ thực hiện đúng một lần.
+    Cú pháp: setTimeout(function, time)
+    Trong đó:
+        function: là nội dung cần thực hiện, đây là một hàm
+        time: là khoảng thời gian bao nhiêu (tính bằng mili giây) thì function đó sẽ thực hiện
+- Hàm clearTimeout() trong Javascript:
+    + Giả sử bạn xây dựng chức năng sau 3 giây thì sẽ xuất hiện thông báo, tuy nhiên sau 2 giây 
+    chương trình muốn hủy bỏ thì phải làm thế nào? Lúc này bạn phải sử dụng hàm clearTimeout().
+    + Tham số truyền vào hàm clearTimeout() là đối tượng setTimeout() nên lúc này ban phải đặt 
+    hàm setTimeout() vào một biến cụ thể.
+-  Hàm setInterval() trong Javascript
+    + Hàm setInterval() có cú pháp và chức năng giống như hàm setTimeout(), tuy nhiên với hàm 
+    setInterval() thì số lần thực hiện lã mãi mãi.
+    + Hàm clearInterval() trong Javascript : Tương tự như hàm clearTimeout(), hàm clearInterval() 
+    sẽ xóa đi nhiệm vụ mà ta đã thiết lập trong hàm setInterval(), và ta cũng phải đặt setInterval()
+    trong một biến thì mới clear được.
+
+
+
+
+
+
+
+
+
