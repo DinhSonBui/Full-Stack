@@ -1,0 +1,168 @@
+* DOM là gì? Các thao tác với DOM trong Javascript
+
+- DOM Javascript là viết tắt của chữ Document Object Model, dịch tạm ra là mô hình các đối 
+tượng trong tài liệu HTML. Thông qua mô hình DOM ta có thể truy xuất đến các thẻ HTML một cách 
+dễ dàng.
+- Như các bạn biết, mỗi thẻ HTML sẽ có những thuộc tính (properties) và có phân cấp cha con với 
+các thẻ HTML khác. Sự phân cấp và các thuộc tính của thẻ HTML này ta gọi là selector, và DOM sẽ 
+có nhiệm vụ xử lý các vấn đề như đổi thuộc tính, đổi cấu trúc của các thẻ HTML.
+- Nhiệm vụ của DOM Javascript là gì?
+    + Cho phép truy xuất đến các thẻ html.
+    + Thay đổi các thuộc tính của thẻ html
+    + Thay đổi css của các thẻ html
+    + Tạo, xóa, thêm các thẻ html
+- Các loại DOM trong Javascript
+    + Việc xử lý và làm việc với đối tượng HTML rất phức tạp và đa dạng. Xét về tính chất thì 
+    người ta chia ra làm 8 loại DOM khác nhau như sau.
+    + Danh sách chia nhóm DOM:
+        DOM document: có nhiệm vụ lưu trữ toàn bộ các thành phần trong tài liệu của website
+        DOM element: có nhiệm vụ truy xuất tới thẻ HTML nào đó thông qua các thuộc tính như tên class, id, name của thẻ HTML
+        DOM HTML: có nhiệm vụ thay đổi giá trị nội dung và giá trị thuộc tính của các thẻ HTML
+        DOM CSS: có nhiệm vụ thay đổi các định dạng CSS của thẻ HTML
+        DOM Event: có nhiệm vụ gán các sự kiện như onclick(), onload() vào các thẻ HTML
+        DOM Listener: có nhiệm vụ lắng nghe các sự kiện tác động lên thẻ HTML đó
+        DOM Navigation dùng để quản lý, thao tác với các thẻ HTML, thể hiện mối quan hệ cha - con của các thẻ HTML
+        DOM Node, Nodelist: có nhiệm vụ thao tác với HTML thông qua đối tượng (Object)
+- Đối tượng DOM document trong javascript : đối tượng này sẽ cung cấp một vài phương thức giúp 
+bạn dễ dàng truy xuất đến các thẻ html.
+    + document.getElementById
+    + document.getElementsByTagName
+    + document.getElementsByClassName
+- Câu hỏi thường gặp về DOM Javascript
+    + DOM là viết tắt của từ gì?
+    + Dom element là gì?
+    + HTML DOM là gì?
+
+----------------------------------------------------------------------------------------------------
+
+* DOM Element trong javascript
+
+- Sử dụng getElementById để tìm theo ID
+    var element = document.getElementById('idname');
+- Sử dụng getElementsByTagName để tìm theo tên thẻ html
+    var elements = document.getElementsByTagName('tagname');
+- Sử dụng getElementsByClassName để tìm theo tên class
+    var elements = document.getElementsByClassName('input');
+- Sử dụng querySelectorAll để tìm theo CSS selector
+    var element = document.querySelectorAll("selector css");
+
+---------------------------------------------------------------------------------------------------
+
+* DOM HTML trong Javascript, lấy nội dung trong thẻ html
+
+- DOM HTML trong Javascript, đây là nhóm DOM dùng để thay đổi nội dung thẻ HTML, cũng như thay đổi 
+các thuộc tính của thẻ HTML.
+- Lấy nội dung trong thẻ HTML bằng Javascript
+    + Để lấy nội dung bên trong một thẻ HTML thì chúng ta sử dụng cú pháp như sau:
+        document.getElementById("content").innerHTML
+    + Để thay đổi nội dung cho một thẻ HTML thì ta dùng cú pháp sau:
+        document.getElementById("content").innerHTML = "<h1>Nội dung</h1>";
+    + Trong đó innerHTML chính là thuộc tính của đối tượng html, công dụng của nó là dùng để lấy 
+    hoặc gán giá trị cho một thẻ html.
+- Thay đổi thuộc tính thẻ html bằng Javascript
+    + Để thay đổi giá trị của thuộc tính HTML thì ta sử dụng cú pháp như sau:
+        document.getElementById("element").attributeName = "new value";
+    + Để lấy giá trị của thuộc tính HTML ta sử dụng cú pháp sau:
+        document.getElementById("element").attributeName;
+    + Trong đó attributeName là tên của thuộc tính mà bạn cần xử lý. Tùy vào mỗi thẻ html mà có 
+    các thuộc tính khác nhau. Dưới đây là danh sách các thuộc tính thường dùng nhất.
+
+---------------------------------------------------------------------------------------------------
+
+* DOM CSS: Thay đổi CSS bằng Javascript
+
+- Trong bài này chúng ta sẽ học cách thay đổi css bằng Javascript thông qua đối tượng DOM CSS. 
+Tất cả thuộc tính CSS của thẻ html đều được lưu trữ trong thuộc tính style của các đối tượng html.
+- Thay đổi CSS bằng Javascript
+    + Các thẻ html đều có thuộc tính style, nhưng ta không thể sử dụng DOM HTML để thiết lập 
+    hay xóa bỏ CSS được mà phải thông qua một đối tượng biệt khác, đó là style.
+    + Đối tượng style này sẽ chứa tất cả các thuộc tính của CSS giúp ta dễ dàng thao tác 
+    với chúng. Và như thường lệ, chúng ta có hai thao tác chính đó là thiết lập CSS và lấy giá 
+    trị CSS hiện tại.
+    + Cú pháp thiết lập CSS bằng Javascript:
+        document.getElementById("object").style.cssName = 'something';
+    + Cú pháp lấy giá trị CSS bằng Javascript:
+        document.getElementById("object").style.cssName;
+    + Trường hợp thuộc tính có dấu gạch ngang như: font-size, line-height, margin-bottom thì thì 
+    nó sẽ có tên là fontSize, lineHeight, marginBottom ,nghĩa là sẽ bỏ đi dấu gạch ngang và viết 
+    hoa ký tự đầu tiên của chữ thứ hai.
+- Ví dụ thay đổi CSS bằng Javascript
+
+--------------------------------------------------------------------------------------------------
+
+* DOM Nodes trong Javascript
+
+- DOM Node - document.createElement()
+    + Khi bạn sử dụng DOM Element để truy vấn tới một đối tượng HTML nào đó thì kết quả nó sẽ 
+    trả về một object và object đó ta gọi là DOM Nodes.
+        var node = document.getElementById("some-id");
+    + Với cách này bắt buộc phải tồn tại một đối tượng HTML đang hiển thị trên website thì mới 
+    khởi tạo thành công. Giả sử nếu bạn muốn tạo một Node mới hoàn toàn v không liên quan tới 
+    những thẻ HTML đang hiển thị trên website thì làm thế nào? Rất đơn giản chúng ta sẽ sử dụng 
+    phương thức document.createElement() với tham số truyền vào là tên của thẻ HTML cần tạo.
+        var p = document.createElement("p");
+    + Sau khi khởi tạo xong bạn hoàn toàn có thể sử dụng các phương thức, thuộc tính của 
+    DOM HTML, DOM CSS.
+        p.innerHTML = "Học DOM Nodes tại freetuts.net"
+    + Để thêm Node này vào trang web thì chúng ta sử dụng phương thức appendChild (sẽ học ở bên 
+    dưới). Giả sử tôi thêm vào thẻ body thì làm như sau:
+        document.getElementsByTagName('body')[0].appendChild(p);
+- DOM Node - document.createTextNode()
+    + Text node là một node đặc biệt, nó không phải là một thẻ HTML thông thường mà chỉ là một 
+    chuỗi (string) nên thông thường chúng ta sử dụng nó để thay thế cách gán thông thường 
+    node.innerHTML.
+        <html>
+            <body>
+                <script language="javascript">
+                   
+                  // Tạo mới một thẻ p
+                  var p = document.createElement("p");
+                   
+                  // Tạo text node
+                  var text = document.createTextNode("Học DOM Nodes tại freetuts.net");
+                   
+                  // Thêm nội dung HTML vào thẻ p
+                  p.appendChild(text);
+                   
+                  // Đưa thẻ P vào trong thẻ body
+                  document.getElementsByTagName('body')[0].appendChild(p);
+                   
+                </script>
+            </body>
+        </html>
+- DOM Node - các phương thức khác
+    + Phương thức appendChild() : Dùng để thêm (bổ sung) vào vị trí cuối cùng của đối tượng một 
+    thẻ HTML nào đó.
+    + Phương thức insertBefore() : Được dùng để thêm một Node vào đằng trước một node con nào đó. 
+    Phương thức này có hai tham số truyền vào insertBefore(node_insert, node_child), 
+    trong đó:
+        node_insert là node bạn muốn thêm vào
+        node_child là node con mà bạn muốn thêm vào đằng trước nó.
+    + Phương thức removeChild() : Được dùng để xóa một node con ra khỏi node hiện tại.
+    + Phương thức replaceChild(newNode, nodeReplance): Dùng để replace (thay thế) một node con nào đó bằng một node khác mới hoàn toàn.
+
+----------------------------------------------------------------------------------------------------
+
+* Mẹo sử dụng thuộc tính HTML trong Javascript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
