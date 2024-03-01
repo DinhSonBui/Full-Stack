@@ -1,0 +1,157 @@
+* Cơ chế hoạt động của hoisting trong Javascript
+
+- Hoisting trong javascript là gì?
+    + Khi bạn thực thi một đoạn mã javascript thì trình biên dịch sẽ tạo ra một bối 
+    cảnh thực thi chung, ta gọi là global execution context.
+    + Bối cảnh thực thi này sẽ có hai giai đoạn, thứ nhất là tạo và thứ hai là thực 
+    thi.
+    + Trong giai đoạn tạo thì javascript sẽ di chuyển các khai báo biến lên đầu của 
+    đoạn mã, giúp cho chương trình không bị lỗi khi sử dụng biến trước khi khai báo.
+    Tính năng này ta gọi là tính năng lưu trữ trong javascript, và trong tiếng Anh 
+    gọi là Hoisting.
+- Biến hoisting trong javascript
+    + Trong Javascript, bạn có thể định nghĩa một biến sau khi sử dụng nhờ tính 
+    năng hoisting.
+    + Javascript sẽ di chuyển toàn bộ các khai báo biến lên đầu chương trình. Vì 
+    vậy, những dòng code có sử dụng biến mà chưa khai báo sẽ không bị lỗi.
+- Từ khóa let và var trong hoisting
+    + Việc sử dung từ khóa let và var để khai báo một biến sẽ có sự khác biệt 
+    trong hoisting.
+    + Sử dụng var: Nếu biến chưa gán giá trị thì sẽ trả về undefined.
+        console.log(counter); // undefined
+        var counter = 1;
+    + Sử dụng let: Nếu biến chưa gán giá trị thì sẽ xuất hiện thông báo lỗi Cannot 
+    access before initialization.
+        console.log(counter); // "ReferenceError: Cannot access 'counter' before initialization
+        let counter = 1;
+        
+-  Hàm hoisting trong javascript
+    + Cũng giống như các biến, công cụ JavaScript cũng lưu trữ các khai báo hàm. 
+    Nó sẽ di chuyển các khai báo hàm lên đầu của chương trình.
+- Hoisting trong biểu thức hàm : 
+    + Biểu thức hàm hay còn gọi là function expressions. Nó là một hàm được khai 
+    báo bằng cách gán vào một biến.
+        let x = 20,
+            y = 10;
+        
+        let result = add(x,y);
+        console.log(result);
+        
+        var add = function(x, y) {
+            return x + y;
+        }
+    + Chạy đoạn code này thì kết quả sẽ xuất hiện lỗi:"TypeError: add is not a 
+    function
+    + Lý do rất đơn giản. Javascript sẽ xem biết add là một biến thông thường, nên 
+    khi nó đưa lên đầu thì sẽ là một biến chứ không phải là một hàm. Vì vậy, khi sử 
+    dụng sẽ xuất hiện lỗi add is not a function.
+- Hoisting trong arrow function
+    + Cú pháp tạo arrow function sẽ như sau:
+        var function_name = () => bieuthuc;
+    + Chính vì vậy, nếu bạn sử dụng arrow function trước rồi mới khai báo thì sẽ bị 
+    lỗi function_name không phải là một hàm.
+
+------------------------------------------------------------------------------------
+
+* Cách dùng use strict trong javascript (strict mode)
+
+- Trong javascript, strick mode là chế độ code nghiêm ngặt, nó bắt buộc lập trình 
+viên phải tuân thủ theo quy tắc mà javascript đưa ra. Các lỗi cơ bản thường gặp như 
+khai báo trùng tên biến và trùng tên hàm, sử dụng biến mà chưa được định nghĩa..
+- Trong bài tìm hiểu hoisting các bạn đã biết được quá trình biên dịch sẽ trải qua 
+2 giai đoạn, đầu tiên là giai đoạn khởi tạo và thứ hai là thực thị. trong giai đoạn 
+khởi tạo thì các biến và hàm sẽ được di chuyển lên phía trên cùng của file, sau đó 
+là biên dịch chương trình. Đây tưởng chừng là một lỗi nhưng nó lại không phải là lỗi
+nhé các bạn, nên không vi phạm vào quy tắc của strict mode.
+- Use strict trong js là gì?
+    + Trong javascript, use strict là từ khóa khai báo sử dụng chế độ strict mode. 
+    Nghĩa là nếu bạn muốn sử dụng chế độ Strict Mode ở đâu thì chỉ việc đặt từ khóa 
+    "use strict" ở đó.
+    + Chế độ Strict Mode có hai phạm vi sử dụng, đó là toàn cục và cục bộ. Tính 
+    toàn cục tức là khi bạn đặt từ "use strict" ở ngoài hàm và nằm phía trên cùng 
+    của file, thì lúc này tất cả các đoạn code bên dưới đều bị ảnh hưởng. Tính cục 
+    bộ tức là bạn đặt "use strict" nằm trong một hàm nào đó thì phạm vi ảnh hưởng 
+    chỉ nằm trong hàm đó mà thôi.
+    + Strict mode toàn cục
+    + Strict mode cục bộ
+- Các trường hợp của use strict trong Javsacript
+    + Sử dụng biến chưa được định nghĩa: Bạn không thể sử dụng một biến mà chưa 
+    được định nghĩa trước đó.
+        "use strict";
+        // sai vì biến domain chưa được khởi tạo trừ trước
+        domain = 'freetuts.net';
+    + Không chấp nhận delete biến: Bạn không thể delete các hàm, biến nếu chạy ở 
+    chế độ strict mode
+        "use strict";
+        var domain = 'freetuts.net'; 
+        // Sai vì không được delete
+        delete domain;
+    + Định thuộc tính nghĩa hai lần: Nếu trong một Object bạn định nghĩa tên key 
+    bị trùng thì sẽ bị lỗi.
+        "use strict";
+        // Sai vì key email bị trùng
+        var info = {
+            email : "thehalfheart@gmail.com",
+            email : "freetuts.net@gmail.com"
+        };
+    + Khao báo tham số bị trùng: Nếu bạn khai báo các tham số bị trùng tên thì sẽ 
+        "use strict";
+        // Sai vì tham số domain bị trùng
+        function show_domain(domain, domain){
+            // do some thing
+        }bị lỗi
+    + Lỗi literals và escape với number: Bạn không được sử dụng literals và escape 
+        "use strict";
+        // Sai
+        var x = 0100;
+        var y = \0100;với kiểu number.
+    + Khai báo tên biến trùng với key: Bạn không thể khai báo tên của biến trùng 
+    với key của Javascript.
+        // Lỗi: Trùng hàm eval
+        var eval = 12;
+        // Lỗi: từ khóa arguments không được sử dụng làm tên biến
+        var arguments = 12;
+        // Lỗi: Từ khóa delete là khóa nên không được sử dụng làm tên biến
+        var delete = 123;
+    + Từ khóa with bị loại bỏ: Bạn không thể sử dụng từ khóa with trong chế độ 
+    strict mode.
+    + Không được khai báo biến trong lệnh eval: Eval là một hàm dùng để biên dịch 
+    một chỗi chứa mã javascript. Nếu trong chuỗi đó có chứa đoạn code khai báo biến 
+    thì sẽ bị lỗi.
+        "use strict";
+        eval("let x = 17");
+        document.write(x);
+        // Uncaught ReferenceError: x is not defined
+    + Từ khóa this không còn là đối tượng windows nữa: Trước đây, khi bạn sử 
+    dụng this trong một hàm không phải là constructor, hoặc sử dụng this bên 
+    ngoài chương trình chính, thì con trỏ this lúc này chính là đối tượng 
+    window. Tuy nhiên, ở chế độ strict mode thì this sẽ mang giá trị undefined.
+- Strict mode luôn được kích hoạt trong module
+    + Từ khi ES6 ra đời thì xuất hiện thêm khái niệm module. Module ra đời 
+    giúp lập trình viên có cách tổ chức cho cấu trúc của ứng dụng trở nên 
+    chuyên nghiệp hơn. Mỗi module sẽ là tập hợp những biến, hàm, lớp có 
+    liên quan với nhau, và nó cho phép các module khác sử dụng tài nguyên 
+    thông qua từ khóa export và import.
+    + Điều đặc biệt là chế độ strict mode luôn được bật trong module, vì vậy hãy 
+    tập thói quen code cho thật cẩn thận nhé.
+        <script type="module">
+            alert(a); // Sai, vì biến a chưa được định nghĩa
+        </script>
+
+------------------------------------------------------------------------------------
+
+* Biểu thức chính quy RegEx trong Javascript
+
+-----------------------------------------------------------------------------------
+
+* localStorage và sessionStorage trong Javascript
+
+
+
+
+
+
+
+
+
+
