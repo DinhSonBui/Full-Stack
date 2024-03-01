@@ -1,0 +1,64 @@
+* Cách dùng vòng lặp for trong Javascript
+
+- Vòng lặp for trong Javascript là gì?:
+    + Vòng lặp for trong javascript là vòng lặp được dùng để lặp một mảng hoặc một danh sách 
+    nằm trong khoảng (min -> max). Đây là vòng lặp có thứ tự và phải biết trước tổng số lần 
+    lặp nên thường dùng trong những bài toán liệt kê và xử lý các phần tử trong danh sách mảng.
+    + Vì ta đang học JS căn bản nên trong bài này mình chỉ làm những bài tập đơn giản liên quan 
+    đến mảng trong javascript thôi nhé. Trước tiền ta tìm hiểu cấu trúc của nó rồi đi vào vấn đề 
+    chính sau:
+        var i = 0;
+        for (i = 0; i < 100; i++){
+            // Dòng lệnh xử lý vòng lặp
+        }
+        Trong đó:
+            var i = 0; là khai báo biến điều khiển vòng lặp i
+            (i = 0) là điểm bắt đầu lặp (lặp từ 0)
+            (i < 100) là điều kiện dừng vòng lặp, nghĩa là lặp nếu i < 100. Bạn có thể dùng một 
+            điều kiện bất kì thông qua các toán tử miễn là nó trả về true hoặc false như (i <= 100, i == 100)
+            (i++) là tăng bước nhảy, bạn có thể dùng công thức khác như i+=2, i-=2, i--, ...
+- Cách sử dụng vòng lặp for trong javascript
+- Vòng lặp for vô hạn trong javascript
+- Vòng lặp for lồng nhau trong javascript
+
+--------------------------------------------------------------------------------------------------
+
+* Vòng lặp while - do while trong javascript
+
+-  Vòng lặp while trong javascript
+    while (condition){
+        // do something
+    }
+    + Trong đó condition là điều kiện dừng vòng lặp, nếu condition đúng thì vòng lặp sẽ được thực 
+    thi cho tới khi condition có giá trị sai. Chính vì vậy nếu condition luôn luôn đúng thì vòng 
+    lặp sẽ dẫn tới lặp vô hạn.
+- Vòng lặp do while trong javascript
+    - Khác một chút so vói vòng lặp while là vòng lặp do while sẽ thực hiện đoạn code bên trong 
+    lệnh do mới kiểm tra điều kiện.
+    - Ví dụ khi bạn chơi trò chơi bốc thăm, lần đầu tiên bạn sẽ bốc nếu cây thăm may mắn thì bốc 
+    tiếp và ai được nhiều cây thăm may mắn thì thắng, như vậy có nghĩa là bạn sẽ được bốc 1 lần 
+    rồi mới kiểm tra điều kiện cho lần bốc kế tiếp. Từ đó suy ra trong vòng lặp do while sẽ luôn 
+    luôn thực thi lặp ít nhất 1 lần.
+    + Cấu trúc vòng lặp do while:
+        do {
+            // some thing
+        }
+        while (condition);
+- Vòng lặp while - do while lồng nhau
+
+---------------------------------------------------------------------------------------------------
+
+* Lệnh break - continue trong Javascript
+
+-  Lệnh break trong Javascript: Lệnh break có tác dụng dừng vòng lặp cho dù điều kiện của vòng 
+lặp vẫn đang đúng, hay nói cách khác là nó thoát khỏi vòng lặp một cách đột xuất và không quan 
+tâm đến điều kiện lặp.
+-  Lệnh break có thể sử dụng với mọi vòng lặp như vòng lặp for, while và do while, each, ...
+- Lệnh continue trong Javascript : Khác hoàn toàn với lệnh break, lệnh continue trong javascript 
+có tác dụng bỏ qua một bước lặp nào đó, nghĩa là lúc gặp lệnh continue thì tất cả những đoạn code 
+nằm bên dưới sẽ không được thực hiện mà nó sẽ nhảy qua vòng lặp mới luôn.
+
+---------------------------------------------------------------------------------------------------
+
+
+
