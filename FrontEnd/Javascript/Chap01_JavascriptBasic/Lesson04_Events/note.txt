@@ -1,0 +1,357 @@
+* Các sự kiện (Event) trong Javascript
+
+- Sự kiện là một hành động tác động lên các đối tượng HTML, qua đó ta có thể bắt được 
+sự kiện và yêu cầu javascript thực thi một chương trình nào đó.
+-  Cách thêm / bắt sự kiện trong Javascript
+    + Cách 1: Bắt sự kiện trực tiếp trong thẻ HTML
+        Giả sử mình có một đoạn mã HTML như sau:
+            <ul>
+            <li><a href="#" onclick="do_something()">Tin công nghệ</a></li>
+            <li><a href="#" onclick="do_something()">Tin trong nước</a></li>
+            <li><a href="#" onclick="do_something()">Tin thời sự</a></li>
+            </ul>
+        Bây giờ ta chỉ cần định nghĩa môt hàm có tên là do_something() là được.
+            function do_something(){
+                alert('Bạn đã click vào nút này!');
+            }
+    + Cách 2: Bắt sự kiện cho một thẻ HTML bằng javascript
+        Để thêm sự kiện bằng Javascript thì bạn sẽ sử dụng cú pháp như sau:
+            elementObject.eventName  = function(){
+                // do something
+            };
+            Trong đó:
+                elementObject là đối tượng HTML mà chúng ta sử dụng DOM để lấy.
+                eventName là tên của event như onclick, onchange, ...
+    + Cách 3: Bắt sự kiện cho nhiều thẻ HTML bằng Javascrip : Trong javascript, trường hợp 
+    bạn muốn bắt sự kiện trên nhiều thẻ HTML thì có thể sử dụng vòng lặp nhé.
+        Cú pháp như sau:
+            // Lấy đối tượng html, bạn có thể sử dụng các DOM Element khác để lấy
+            var elementObjs = document.getElementsByTagName('element');
+            
+            // Lặp qua từng phần tử trong kết quả và gán sự kiện
+            for (var i = 0; i < elementObjs.length; i++)
+            {
+                elementObjs[i].eventName = function()
+                {
+                // Do simething
+                };
+            }
+- Các sự kiện (Events) trong javascrpt
+    Event Name	Description
+    onclick	Xảy ra khi click vào thẻ HTML
+    ondbclick	Xảy ra khi double click vào thẻ HTML
+    onchange	Xảy ra khi giá trị (value) của thẻ HTML đổi. Thường dùng trong các đối thẻ form input
+    onmouseover	Xảy ra khi con trỏ chuột bắt đầu đi vào thẻ HTML
+    onmouseout	Xảy ra khi con trỏ chuột bắt đầu rời khỏi thẻ HTML
+    onmouseenter	Tương tự như onmouseover
+    onmouseleave	Tương tự như onmouseout
+    onmousemove	Xảy ra khi con chuột di chuyển bên trong thẻ HTML
+    onkeydown	Xảy ra khi gõ một phím bất kì vào ô input
+    onload	Sảy ra khi thẻ HTML bắt đầu chạy, nó giống như hàm khởi tạo trong lập trình hướng đối tượng vậy đó.
+    onkeyup	Xảy ra khi bạn gõ phím nhưng lúc bạn nhã phím ra sẽ được kích hoạt
+    onkeypress	Xảy ra khi bạn nhấn môt phím vào ô input
+    onblur	Xảy ra khi con trỏ chuột rời khỏi ô input
+    oncopy	Xảy ra khi bạn copy nội dung của thẻ
+    oncut	Xảy ra khi bạn cắt nội dung của thẻ
+    onpaste	Xảy ra khi bạn dán nội dung vào thẻ
+
+---------------------------------------------------------------------------------------------
+
+* Return TRUE/FALSE trong Javascript
+
+-  Return true / false của function javascript: Khi một hàm return false thì tức là nó trả 
+về một giá trị false thuộc kiểu boolean, còn return true thì trả về giá trị true và cũng 
+thuộc kiểu boolean.
+- Return true/false trong sự kiện Javascript:
+    + Javascript có thể can thiệp đến các sự kiện của các đối tượng HTML một cách dễ dàng. 
+    Nó có thể quyết định đến việc cho phép sự kiện xảy ra hoặc không cho phép xảy ra.
+    + Nếu sự kiện return true thì tức là cho phép sự kiện xảy ra. Còn return false là 
+    không cho phép sự kiện xảy ra.
+- Bài tập validate form sử dụng return trong javascript
+
+-------------------------------------------------------------------------------------------
+
+* Sự kiện window.onload trong Javascript
+
+- Trong bài này chúng ta sẽ tìm hiểu sự kiện window.onload trong javascript, đây là sự 
+kiện xảy ra khi mọi tài nguyên của website đã load xong.
+- Sự kiện window.onload có ý nghĩa rằng khi trình duyệt đã load xong mọi thứ (image, js, 
+css) thì những đoạn code nằm bên trong đó mới được chạy. Bạn có thể sử dụng sự kiện này 
+với các thẻ HTML liên quan đến việc tải dữ liệu như thẻ img hoặc thẻ iframe.
+- Sự kiện này rất quan trọng, nó giúp ta biết được khi nào thì trình duyệt tải xong 
+hết các tài nguyên trên hệ thống, giúp ta có thể can thiệp vào quá trình tải dữ liệu của 
+trình duyệt.
+- Cú pháp của javascript onload như sau:
+    window.onload = function()
+    {
+        // code
+    };
+-  Hiểu về quá trình biên dịch trong Javascript:
+    + Cũng như các ngôn ngữ lập trình khác, Javascript sẽ chạy biên dịch từ trên xuống 
+    dưới và từ trái qua phải. Chính vì vậy, khi sử dụng một hàm mà phía trên nó không tồn 
+    tại hàm đó thì sẽ bị bái lỗi undefined. Và để giải quyết vấn đề này thì ta sẽ dùng sự 
+    kiện onload trong js.
+
+--------------------------------------------------------------------------------------------
+
+* addEventListener trong Javascript
+
+- addEventListener là một phương thức được tích hợp sẵn vào các đối tượng HTML thông qua 
+cơ chế DOM. Khi sử dụng addEventListener thì bạn có thể bổ sung rất nhiều hành động vào 
+sự kiện tại nhiều thời điểm khác nhau.
+-Ví dụ mình đang làm form đăng nhập, mình muốn khi người dùng click vào nút đăng nhập 
+thì sẽ thực hiện thao tác kiểm tra các ràng buộc dữ liệu, sau đó thông báo đến người dùng 
+là thành công hoặc thất bại.
+- Cú pháp như sau:
+    elementObject.addEventListener('eventName', function(e){
+        // do something
+    });
+-  Cách dùng addEventListener trong Javascript :  Cách dùng addEventListener trong 
+Javascript
+    elementObject.eventName  = function(){
+        // do something
+    };
+- Nhưng nếu bạn sử dụng hàm addEventListener() thì cú pháp như sau:
+    elementObject.addEventListener('eventName', function(e){
+        // do something
+    });
+    Trong đó:
+        eventName là tên của sự kiện bỏ đi chữ on, ví dụ click, change, ...
+        function ở tham số thứ hai chính là hàm sẽ được chạy khi sự kiện eventName 
+        được kích hoạt
+- Dùng addEventListener thêm sự kiện cho window
+    + Đối tượng window ta có thể ví nó như cửa sổ trình duyệt browser nên nó cũng có một 
+    số sự kiện riêng, điển hình là sự kiện resize browser. Như vậy với hàm 
+    addEventListener() ta cũng có thể thêm sự kiện cho window.
+        <html>
+            <body>
+                <h4>Bạn hãy zoom trình duyệt</h4>
+                <div id="result"></div>
+                <script language="javascript">
+                  window.addEventListener("resize", function(){
+                    document.getElementById("result").innerHTML = "Bạn vừa zoom Browser";
+                  });
+                </script>
+            </body>
+        </html>
+- Truyền tham số vào sự kiện trong hàm addEventListener : Nếu bạn muốn truyền tham số vào 
+thì bắt buộc bạn phải tạo một hàm khác rồi gọi nó từ hàm addEventListener().
+    // Lấy đối tượng
+    var button = document.getElementById("btn");
+    
+    // Thêm sự kiện cho đối tượng
+    button.addEventListener('click', function(){
+        do_something(2, 3);
+    });
+    
+    function do_something(a, b)
+    {
+    alert( a + b);
+    }
+
+------------------------------------------------------------------------------------------
+
+* Phương thức removeEventListener() Javascript
+
+- Nếu như hàm addEventListener() dùng để thêm một hành động cho một sự kiện thì hàm 
+removeEventListener() lại có tác dụng ngược lại, nó sẽ xóa đi một hành động đã được 
+gán cho một sự kiện.
+- Ví dụ removeEventListener() trong Javascript
+    + Ví dụ: Xây dựng một ứng dụng khi di chuyển chuột thì sẽ xuất hiện một dãy số ngẫu 
+    nhiên, nếu người dùng click vào button Stop Random thì sẽ dừng random dãy số đó.
+    + Như vậy ta có hai thẻ HTML chính, thứ nhất là một div dùng để hiển thị dãy số ngẫu 
+    nhiên và thứ hai là một button dùng để để click Stop Random. Và dây là một số lưu ý 
+    trước khi làm bài:
+        Đề bài yêu cầu khi move chuột trên trang web nên ta sẽ thêm sự kiện mousemove 
+        cho thẻ <html>.
+        Dùng hàm addEventListener() để thêm sự kiện mousemove vào thẻ <html>
+        Dùng đối tượng Math.random() để lấy dãy số ngẫu nhiên
+        Dùng hàm removeEventListener() để xóa đi những hành động của sự kiện mousemove 
+        (xem bài sự kiện trong javascript).
+    <html>
+        <body>
+        
+            <div id="result"></div>
+            <input type="button" value="Stop Random" id="stop_random" />
+            
+            <script language="javascript">
+                // Bước 1: Lấy các đối tượng
+                var result = document.getElementById("result");
+                var button = document.getElementById("stop_random");
+                var html = document.getElementsByTagName("html")[0];
+            
+                // Bước 2: Định nghĩa hành động hiển thị dãy số random
+                function do_random()
+                {
+                    var randomString = Math.random();
+                    result.innerHTML = randomString;
+                }
+                
+                // Bước 3: Thêm hành động do_random cho sự kiện mousemove thẻ <html>, 
+                html.addEventListener("mousemove", do_random);
+            
+                // Bước 4: Thêm sự kiện click cho button
+                button.addEventListener("click", function(){
+                    // Xóa hành động do_random khỏi sự kiện mousemove
+                    html.removeEventListener("mousemove", do_random);
+                });     
+            </script>
+        </body>
+    </html>
+
+-------------------------------------------------------------------------------------------
+
+* Sự kiện click trong Javascript
+
+- Khi nào sử dụng sự kiện click trong Javascript?Ta cần bắt sự kiện click khi muốn xây 
+dựng một chức năng nào đó, và chức năng này sẽ xảy ra khi người dùng click vào một đối 
+tượng nào đó.
+- Cú pháp sự kiện click trong Javascript: Chúng ta có hai cách để bắt sự kiện click trong 
+js, thứ nhất là gắn trực tiếp trên thẻ HTML, và thứ hai là sử dụng thông qua thuộc tính 
+onclick của các đối tượng DOM.
+    + Cách 1: Gắn trực tiếp trên thẻ HTML
+        <element onclick="event_function()"></element>
+    + Cách 2: Gắn sự kiện click vào đối tượng DOM   
+        Mình sẽ đặt id cho thẻ input trên, sau đó sử dụng các hàm hỗ trợ DOM để gọi đến 
+        thẻ này, sau đó gắn một hàm vào thuộc tính click.
+        <input type="button" value="Click me" id="msgbtn"/>
+        <script>
+            var input = document.getElementById('msgbtn');
+            input.onclick = function(){
+                alert('Bạn đã click vào thẻ này');
+            };
+        </script>
+- Gán nhiều hành động cho sự kiện click cùng lúc: Đối với sự kiện click trong js, bạn có 
+thể gán nhiều hành động vào nhiều thời điểm khác nhau. Tuy nhiên, nó chỉ nhận hành động mà 
+bạn gán cuối cùng thôi nhé.
+
+-------------------------------------------------------------------------------------------
+
+* Sự kiện hover chuột trong Javascript
+
+- Sự kiện hover trong javascript là gì?: Sự kiện hover tức là khi bạn hover chuột vào một 
+thẻ html nào đó thì ngay lập tức sẽ xảy ra sự kiện hover.
+- Cách gọi sự kiện hover trong javascript
+    + Cách 1: Gắn trực tiếp trên thẻ HTML
+        <input type="button" onmouseover="callHoverEvent()" value="Click me"/>
+        <script>
+            function callHoverEvent(){
+                alert('Bạn đã hover chuột qua thẻ input');
+            }
+        </script>
+    + Cách 2: Gắn sự kiện hover thông qua đối tượng DOM
+        <input type="button" id="hvbtn" value="Click me"/>
+        <script>
+            var obj = document.getElementById('hvbtn');
+            hvbtn.onmouseover = function(){
+                alert('Bạn đã hover chuột qua thẻ input');
+            };
+        </script>
+        Hoặc sử dụng hàm addEventListener.
+        <input type="button" id="hvbtn" value="Click me"/>
+        <script>
+            var obj = document.getElementById('hvbtn');
+            hvbtn.addEventListener('mouseover', function(){
+                alert('Bạn đã hover chuột qua thẻ input');
+            });
+        </script>
+
+--------------------------------------------------------------------------------------------
+
+* Sự kiện rời chuột onmouseout trong Javascript
+
+- Sự kiện di chuyển chuột ra ngoài trong Javascript là gì? : Đây là sự kiện khi người dùng 
+di chuyển con trỏ chuột ra ngoài phạm vi hiển thị của thẻ HTMl. Ta sẽ bắt sự kiện này và 
+xử lý theo yêu cầu của từng bài toán.
+-  Cách thêm sự kiện rời chuột onmouseout trong Javascript: Để thêm sự kiện onmouseout vào một 
+thẻ HTML nào đó thì ta có một số cách như sau:
+    + Cách 1: Thêm trực tiếp trong thẻ HTML
+        <input type="button" onmouseout="callMouseOutEvent()" value="Di chuyển vào đây"/>
+        <script>
+            function callMouseOutEvent(){
+                alert('Bạn đã di chuyển chuột ra ngoài thẻ input');
+            }
+    + Cách 2: Gắn hàm vào sự kiện onmouseout bằng mã Javascript
+        <input type="button" id="btn" value="Di chuyển vào đây"/>
+        <script>
+            var obj = document.getElementById('btn');
+            obj.onmouseout = function(){
+                alert('Bạn đã di chuyển chuột ra ngoài thẻ input');
+            };
+        </script>
+
+---------------------------------------------------------------------------------------------------
+
+* Sự kiện nhấp đúp chuột ondbclick trong Javascript
+
+- Khi nào sử dụng sự kiện ondbclick trong Javascript? : Khi bạn muốn bắt hành động nhấp đôi chuột, tức là nhấp chuột trái hai lần vào một thẻ HTML nào 
+đó thì sử dụng sự kiện ondbclick.Nếu bạn đang sử dụng máy tính Windows thì sẽ thấy sự kiện này 
+rất nhiều, đó là muốn mở một file hay một folder thì bạn phải click đúp chuột trái hai lần.
+- Cú pháp sự kiện ondbclick trong Javascript
+    + Cách 1: Gắn trực tiếp trên thẻ HTML
+        <element ondbclick="event_function()"></element>
+    + Cách 2: Sử dụng mã javascript để thêm sự kiện
+        <input type="button" id="btn" value="Click me"/>
+        <script>
+            var obj = document.getElementById('btn');
+            obj.ondblclick = function(){
+                alert('Bạn đã đúp chuột vào thẻ input này');
+            };
+        </script>
+
+---------------------------------------------------------------------------------------------------
+
+* Sự kiện mousemove trong Javascript (di chuyển chuột)
+
+- Cú pháp onmousemove trong javascript
+    + Cách 1: Sử dụng mã HTML
+        <element onmousemove="hanh_dong()">
+    + Cách 2: Sử dụng Javascript
+        object.onmousemove = function(){/*mã code*/};
+- Ta có thể sử dụng sự kiện di chuyển chuột onmousmove cho tất cả các thẻ HTML trừ những thẻ sau: 
+<base>, <bdo>, <br>, <head>, <html>, <iframe>, <meta>, <param>, <script>, <style>, and <title>.
+- Điểm khác biệt giữa sự kiện này so với các sự kiện onmouseenter và onmouseover như sau:
+    Sự kiện onmousemove xảy ra mỗi khi con trỏ chuột được di chuyển qua phần tử HTML.
+    Sự kiện mouseenter chỉ xảy ra khi con trỏ chuột vào phần tử HTML.
+    Sự kiện onmouseover xảy ra khi con trỏ chuột đi vào phần tử HTML và các phần tử con của nó.
+
+---------------------------------------------------------------------------------------------------
+
+* Sự kiện Submit Form trong Javascript
+
+- Thẻ HTML form có sự kiện onsubmit, đây chính là nơi mà bạn gọi đến hàm xử lý trước khi hành 
+động submit xảy ra.
+    <form method="post" action="" onsubmit="return validate()">
+    </form>
+    Lưu ý rằng hàm validate phải trả về kiểu boolean nhé:
+        Trả về true thì cho phép submit form
+        Trả về false thì không submit form
+- Gọi đến một hàm Javascript khi submit
+    + Cách 1: Sử dụng HTML.
+        <form onsubmit="functionName">
+    + Sử dụng phương thức addEventListener().
+        formObj.addEventListener("submit", functionName);
+    + Cách 3: Sử dụng thuộc tính onsubmit của đối tượng form.
+        formObj.onsubmit = function(){functionName};
+- Dùng Javascript để submit form
+    Ngoài cách sử dụng một thẻ input submit thì bạn cũng có thể sử dụng Javascript để thực hiện 
+    một hành động submit form.
+    Giả sử mình có thẻ input button như sau:
+        <form method="post" action="" id="myform">
+            <input type="button" value="Button"/>
+        </form>
+    Nếu click vào button này thì sẽ không xảy ra sự kiện submit form, bởi đây là một button chứ 
+    khong phải button submit.
+    Bây giờ ta sẽ bổ đoạn code khi click vào button đó thì gọi đến phương thức submit() của form 
+    để kích hoạt sự kiện.
+        <form method="post" action="" id="myform">
+            <input type="button" onclick="submitForm()" value="Button"/>
+        </form>
+        <script>
+            function submitForm(){
+                document.getElementById('myform').submit();
+            }
+        </script>
+
+
+
