@@ -1,0 +1,430 @@
+* String trong Javascript
+
+- Chuỗi string trong Javascript là gì? : Chuỗi là một đoạn text có thể có một hoặc nhiều ký tự 
+và thông thường chúng ta sẽ lưu trữ nó vào một biến, biến này ta sẽ gọi là biến có kiểu dữ liệu 
+là String (chuỗi). Tất cả các chuỗi đều phải được bao quanh bằng cặp dấu nháy đơn ' hoặc nháy kép ".
+- Ví dụ: Khai báo biến và gán chuỗi string JS
+    var website = "website freetuts.net học javascript quá sướng";
+    var email = 'thehalfheart@gmail.com';
+- Trường hợp trong chuỗi cũng có xuất hiện dấu nháy đơn hoặc nháy đôi thì bắt buộc bạn phải 
+thêm ký tự \ đằng trước dấu nháy đó, nếu không sẽ bị lỗi về cũ pháp.
+    Ví dụ: Trong chuỗi string có dấu nháy
+    var message = "Học lập trình tại \"freetuts.net\" quá sướng";
+    var domain = 'freetuts.net - 'web học lập trình'';
+- Cách nối chuỗi string trong Javascript: Để nối chuỗi string trong JS thì chúng ta sử dụng dấu + 
+để gép hai chuỗi hoặc biến kiểu String Object lại với nhau.
+    Ví dụ: Ghép hai string lại rồi gán vào biến message.
+    var message = "chào mừng bạn" + "đến với freetuts.net";
+- Xử lý string trên nhiều dòng trong Javascript : Dùng cặp dấu ``.
+    var message = `Chào mừng bạn đến với
+                freetuts.net`;
+- Ép chuỗi string trong javascript: Nếu bạn muốn ép một giá trị nào đó sang kiểu chuỗi thì có thể 
+sử dụng cú pháp string.toString().
+    // Trước khi chuyển đổi
+    var number = 12;
+    alert(typeof number);
+    // Sau khi chuyển đổi
+    number = number.toString();
+    alert(typeof number);
+- Một số hàm xử lý string trong Javascript
+    + Để đếm tổng số ký tự trong chuỗi string thì ta sử dụng thuộc tính length.
+    + Tìm kiếm chuỗi trong chuỗi, Nếu muốn tìm kiếm một chuỗi bên trong một chuỗi khác thì dùng 
+    hàm indexOf. Nếu tìm thấy thì nó sẽ trả về vị trí xuất hiện đầu tiên của chuỗi con. Nếu không 
+    tìm thấy thì tra về -1.
+    + Nếu muốn tìm vị trí xuất hiện cuối cùng của chuỗi con thì dùng hàm lastIndexOf.
+    + Ngoài ra bạn cũng có thể sử dụng hàm search, nó có công dụng giống như hàm indexOf.
+
+----------------------------------------------------------------------------------------------------
+
+* Các hàm xử lý chuỗi trong Javascript (cắt / tách / nối chuỗi ..)
+
+- Tìm kiếm chuỗi string trong JS
+    + Hàm indexOf()
+    + Hàm lastIndexOf()
+    + Hàm search()
+    + Cắt chuỗi string trong JS : Nếu ban muốn cắt một chuỗi con từ chuỗi cha thì bạn có thể sử 
+    dụng ba hàm sau:
+        slice(start, end)
+        substring(start, end)
+        substr(start, length)
+    + Tìm kiếm và lặp chuỗi trong JS : Để tìm kiếm và lặp một chuỗi con nào đó thì bạn sử dụng 
+    hàm replace(str_find, str_replace), trong đó str_find là chuỗi cần tìm và str_replace là chuỗi 
+    sẽ được thay thế chuỗi str_find.
+    + Chuyển thành chữ hoa và chữ thường trong JS: Để chuyển chuỗi thành chữ hoa ta dùng hàm 
+    toUpperCase() và chuyển thành chữ thường ta dùng hàm toLowerCase().
+        var string = "Welcome to freetuts.net";
+        document.write(string.toUpperCase() + "<br/>");
+        document.write(string.toLowerCase());
+    + Nối thêm chuỗi : Để nối thêm chuỗi thông thường ta dùng toán tử +, ngoài ra bạn có thể 
+    dùng hàm concat() để thực hiện nối chuỗi.
+        var string = "Welcome " + "to" + " freetuts.net";
+        document.write(string + "<br/>");
+        // hoặc
+        var string = "Welcome ";
+        string = string.concat("to ", "freetuts.net");
+        document.write(string + "<br/>");
+    + Tìm ký tự hoặc mã ASCII của một ký tự : Để xem ký tự của một vị trí nào đó thì dùng hàm 
+    charAt(), còn xem mã ASCII thì dùng hàm charCodeAt(). Cả hai hàm này đều có tham số truyền 
+    vào là vị trí muốn xem.
+        var string = "Welcome freetuts.net";    
+        document.write(string.charAt(1) + "<br/>");
+        document.write(string.charCodeAt(1) + "<br/>");
+    + Chuyển đổi chuỗi sang mảng JS: Để chuyển một chuỗi sang mảng thì ta sử dụng hàm split() 
+    với tham số truyền vào là ký tự ngăn cách giữa các phần tử.
+        string = "Welcome freetuts.net";
+        // Tạo thành mảng với mỗi phần tử ngăn bởi khoảng trắng
+        // kết quả là mảng có hai phần tử gồm: welcome và feetuts.net
+        document.write(string.split(" ").length);
+    + Cách lặp qua từng ký tự chuỗi string trong JS:
+        let domain = "freetuts.net";
+        for (var i = 0; i < domain.length; i++){
+            console.log(domain[i]);
+        }
+
+---------------------------------------------------------------------------------------------------
+
+* Mảng trong Javascript
+
+- Mảng trong Javascript là gì?
+    + Mảng là một loại dữ liệu dạng tập hợp nhiều phần tử, trong đó mỗi phần tử sẽ được đánh 
+    dấu vị trí bằng chỉ mục. Nếu mảng có 10 phần tử thì số thứ tự các phần tử sẽ là từ [0 -> 9].
+    + Chúng ta thường sử dụng mảng để lưu trữ dữ liệu dạng danh sách. Ví dụ để lưu trữ danh sách 
+    tên sinh viên trong một lớp nào đó thì có thể sử dụng mảng, mỗi phần tử sẽ là tên của một 
+    thành viên trong lớp.
+- Khai báo mảng trong javascript
+    + Khai báo với từ khóa new Array()
+        var name_array = new Array();
+        // Hoặc
+        var name_array = new Array(1,2,3);
+    + Khai báo với cặp dấu ngoặc vuông []
+        var name_array = [];
+        // Hoặc
+        var name_array = [1,2,3];
+- Truy xuất các phần tử trong mảng: Để truy xuất đến một phần tử trong mảng thì chúng ta phải biết 
+được vị trí cần lấy. Ví dụ mảng có 10 phần tử, và bạn muốn lấy phần tử thứ 5 thì chỉ mục của nó sẽ 
+là (5-1 = 4), tại vì mảng bắt đầu từ 0.
+    + Cú pháp truy xuất phần tử như sau:
+        tenmang[vitri]
+    + Ví dụ: Lấy các phần tử thứ 1, 2, 3 trong mảng t.
+        var t = new Array(1,2,3);
+        alert(t[0]); // kết quả là 1
+        alert(t[1]); // kết quả là 2
+        alert(t[2]); // kết quả là 3
+- In mảng ra trình duyệt và console
+    + Hàm array.join() : Để hiển thị các phần tử ra ngoài trình duyệt chúng ta sẽ sử dụng hàm 
+    array.join(). Ví dụ:
+        var t = new Array(1,2,3);
+        document.write(t.join()); // kết quả 1,2,3
+        document.write(t.join('-')); // kết quả 1-2-3
+    + Hàm console.log()
+- Sử dụng vòng lặp để duyệt mảng trong javascript
+
+----------------------------------------------------------------------------------------------------
+
+* Các hàm xử lý mảng trong javascript hữu ích
+
+- Hàm array.valueOf(): Hàm này có tác dụng tương tự như hàm array.join() mà ta đã học ở bài trước, 
+có nghĩa là nó sẽ nối các phần tử với nhau vào một chuỗi cách nhau bởi dấu phẩy.
+    var mang = ["Học", "lập", "trình", "tại", "freetuts.net"];
+    document.write(mang.valueOf());
+- Hàm array.push() : Hàm này sẽ thêm một phần tử vào cuối mảng.
+    var mang = ["Học", "lập", "trình", "tại", "freetuts.net"];
+    // in mảng
+    document.write(mang.valueOf());
+    document.write('<br/>');
+    // Thêm và in
+    mang.push("Miễn phí");
+    document.write(mang.valueOf())
+- Hàm array.pop() : Ngược với hàm array.push(), hàm này có tác dụng xóa đi phần tử cuối cùng 
+trong mảng.
+- Hàm array.shift(): Hàm xóa phần tử đầu tiên của mảng, sau đó dồn các phần tử phía sau xuống 
+một bậc.
+- Hàm array.unshift() : Thêm một phần tử vào vị trí đầu tiên của mảng, đồng thời đẩy các phẩn 
+từ phía sau lên một bậc.
+- Hàm array.splice() : Hàm splice() có ba tham số truyền vào như sau: splice(position_add, 
+num_element_remove, value1, value2, ...).
+    Trong đó:
+        position_add là vị trí sẽ thêm (vị trí đầu tiên là 0)
+        num_element_remove là số phần tử sẽ xóa (bắt đầu từ position_add)
+        value1, value2, .. là danh sách các phần tử sẽ được thêm vào sau khi tại vị trí position_add và 
+        sau khi xóa số lượng num_element_remove phần tử.
+- Hàm array.sort(): Hàm này dùng để sắp xếp các phần tử trong mảng theo thứ tự chữ cái alpha.
+- Hàm array.reverse(): Hàm đảo ngược các phẩn tử lại. Vị trí đầu sẽ được chuyển xuống cuối 
+mảng và vị trí cuối mảng sẽ được chuyển lên đầu mảng.
+- Hàm array.concat(): Hàm dùng để nối hai mảng với nhau và trả về một mảng gồm tổng số phần tử 
+của hai mảng đó.
+    var mang1 = ["Học", "lập", "trình"];
+    var mang2 = ["tại", "freetuts.net"];
+    // Nối mảng
+    var mang_con = mang1.concat(mang2);
+    document.write(mang_con.valueOf());
+- Hàm array.slice(): Hàm dùng để lấy một số phần tử con trong mảng. Có hai tham số truyền vào 
+như sau: slice(start, end).
+    Trong đó:
+    start: là vị trí bắt đầu
+    end: là vị trí kết thúc
+
+-------------------------------------------------------------------------------------------------
+
+* Mảng hai chiều trong Javascript
+
+- Mảng hai chiều là loại mảng mà mỗi phần tử của mảng đó là một mảng khác. Cấu trúc này giúp ta 
+lưu trữ dữ liệu đa dạng và phong phú hơn nhiều so với mảng một chiều.
+- Mảng hai chiều có cấu trúc giống như một ma trận, mỗi phần tử sẽ có hai chỉ mục, đó là vị trí 
+nằm trong hàng và cột [row|column].
+- Khai báo mảng hai chiều trong javascript: Để khai báo mảng hai chiều trong js thì ta sẽ khai 
+báo một mảng một chiều, sau đó mỗi phần tử của mảng ta sẽ gán giá trị là một mảng khác.
+    var numbers = [
+        [5, 12, 17, 9, 3],
+        [13, 4, 8, 14, 1],
+        [9, 6, 3, 7, 21]
+    ];
+    alert(numbers[1][2]); // In ra 8
+- Bạn cũng có thể sử dụng Array để khai báo.
+    var numbers = new Array(
+        new Array(5, 12, 17, 9, 3),
+        new Array(13, 4, 8, 14, 1),
+        new Array(9, 6, 3, 7, 21)
+    );
+    alert(numbers[1][2]); // In ra 8
+- Lấy phần tử mảng hai chiều trong javascript : array[row][column]
+- Thêm phần tử vào mảng hai chiều trong javascript
+    + Thêm vào cuối mảng hai chiều : Ta sử dụng hàm push() để thêm một phần tử vào cuối mảng 
+    hai chiều.
+    + Thêm vào đầu mảng hai chiều : Thêm vào đầu mảng hai chiều
+- Duyệt mảng hai chiều trong javascript
+    var numbers = [
+        [5, 12, 17, 9, 3],
+        [13, 4, 8, 14, 1],
+        [9, 6, 3, 7, 21]
+    ];
+     
+    // Lặp theo hàng
+    for (var i = 0; i < numbers.lenght; i++){
+         
+        // Lặp theo cột, số cộ từ 0 -> số lượng phần tử của hàng i
+        for (var j = 0; j < numbers[i].length; j++){
+            console.log(numbers[i][j]);
+        }
+    }
+
+--------------------------------------------------------------------------------------------
+
+* Đối tượng Number trong Javascript (cách tạo và cách sử dụng)
+
+- Giới thiệu number trong Javascript: Trong Javascript có một đối tượng thường được dùng 
+để xử lý kiểu dữ liệu number, đó là đối tượng Number. Đối tượng này có hai dạng, đó là số 
+có dấu chấm động và số không có dấu chấm động.
+    var x = 12; // không có dấu chấm động
+    var y = 12.5; // có dấu chấm động
+- Không giống với các ngôn ngữ lập trình khác, các số trong Javascript luôn luôn là 64 
+bít và kiểu float, vì vậy bạn không thể định nghĩa các kiểu dữ liệu như integer, short, 
+long.. Hay nói cach khác, trong Javascript khi làm việc với các chữ số thì chỉ có khái 
+niệm Number.
+- Tất cả các dữ liệu liên quan đến những con số đều có kiểu dữ liệu là Number, nghĩa 
+là bạn dùng hàm typeof thì sẽ có kết quả trả về là 'number'.
+- Thao tác với Number trong Javascript
+    + Chuyển Number sang String: Để chuyển một biến đang ở kiểu Number sang kiểu String 
+    thì ta sử dụng phương thức number.toString(type), hàm này có một tham số truyền vào 
+    là type và đây chính là kiểu dữ liệu mà ban muốn chuyển về, mặc định sẽ là hệ thập 
+    phân (10).
+        var myNumber = 128;
+        myNumber.toString(16);    // returns 80
+        myNumber.toString(8);      // returns 200
+        myNumber.toString(2);      // returns 10000000
+- Số Infinity : Infinity cũng là một kiểu dữ liệu Number và khi một biến có giá trị là 
+Infinity thì tức là nó đã vượt mức lưu trữ cho phép nên theo mặc định nó sẽ chuyển về 
+dạng đó. Vì nó cũng là một giá trị nên bạn có thể so sánh bình thường.
+- NaN - Not a Number : Nếu bạn thực hiện một phép toán nào đó liên quan đến Number nhưng 
+vi phạm quy tắc tính toán thì kết quả sẽ trả về một giá trị gọi là NaN (Not a Number). 
+Ví dụ khi bạn thực hiện phép chia hai số nếu bạn cho mẫu số là một chuỗi String thì kết 
+quả sẽ là NaN.
+- Numbers - Objects : Ngoài cách tạo một biến Number thông thường đó là gán giá trị trực 
+tiếp thì còn một cách khác đó là sử dụng đối tượng Number. Tuy nhiên hai cách tạo này sẽ 
+có kiểu dữ liệu khác nhau.
+    var x = 123; // number
+    var y = new Number(123); // object
+- Các hàm xử lý number trong javascript : Các hàm xử lý mình chia làm hai nhóm chính, 
+thứ nhất là nhóm toàn cục và thứ hai là nhóm cục bộ. Nhóm toàn cục tức là những hàm không 
+nằm trong đối tượng Number và nhóm cục bộ tức là những hàm nằm trong đối tượng Number.
+    + Nhóm toàn cục:
+        Number(type) trả về một number và định dạng cơ số type = (nhị phân, thập phân, thập lục phân)
+            var boolean_true = true;
+            parseInt(boolean_true); // returns NaN
+            var boolean_false = false;
+            parseInt(boolean_false);// returns NaN
+            var string_str = '10 freetuts.net';
+            parseInt(string_str);   // returns 10
+            var string_num = '100';
+            parseInt(string_num);   // returns 100          
+            var date = new Date();
+            parseInt(boolean_true); // returns NaN
+        parseFloat() chuyển sang một số float
+            var boolean_true = true;
+            parseFloat(boolean_true);   // returns NaN
+            var boolean_false = false;
+            parseFloat(boolean_false);  // returns NaN
+            var string_str = '10.2 freetuts.net';
+            parseFloat(string_str);     // returns 10.2
+            var string_num = '100';
+            parseFloat(string_num);     // returns 100
+            var date = new Date();
+            parseFloat(boolean_true);   // returns NaN
+        parseInt() chuyển sang một số integer
+            var boolean_true = true;
+            parseInt(boolean_true); // returns NaN
+            var boolean_false = false;
+            parseInt(boolean_false);// returns NaN
+            var string_str = '10 freetuts.net';
+            parseInt(string_str);   // returns 10
+            var string_num = '100';
+            parseInt(string_num);   // returns 100
+            var date = new Date();
+            parseInt(boolean_true); // returns NaN
+    + Nhóm cục bộ:
+        toString() chuyển sang kiểu string
+        toFixed(n) chuyển sang số có n số lẻ ở đằng sau
+        toPrecision(n) chuyển sang số có chiều dài là n
+        valueOf() lấy giá trị của biến hoặc một giá trị nào đó
+
+--------------------------------------------------------------------------------------------
+
+* Date trong Javascript
+
+- Đối tượng Date trong Javascript: Date là một object (đối tượng) giúp lập trình viên lấy 
+được thời gian hiện tại ở máy khách client, qua đó sẽ xử lý những chức năng cần đến thông 
+số thời gian này.
+- Định dạng (format) của Date trong Javascript:
+    Có ba định dạng chính đó là:
+        ISO : Định dạng chuẩn của ISO 8601 là (YYYY-MM-DD) hoặc (YYYY-MM) hoặc (YYYY).
+        Long: Định dạng Long tức là bạn truyền vào với tên của tháng là ba chữ cái đầu 
+        tiên ghi bằng tiếng Anh, lúc này bạn có thể đặt vị trí của nó thế nào cũng được 
+        vì đối tượng Date tự nhận diện và chuyển đổi.
+            var LONG_1 = new Date("Mar 25 2015");
+            var LONG_2 = new Date("2015 Mar 25");
+            var LONG_3 = new Date("25 2015 Mar");
+        Short : Định dạng Short được lưu trữ dưới dạng MM/DD/YYYY hoặc YYYY/MM/DD hoặc 
+        MM-DD-YYYY hoặc YYYY-MM-DD/
+            var SHORT_1 = new Date("03-25-2015");
+            var SHORT_2 = new Date("03/25/2015");
+            var SHORT_3 = new Date("2015/03/25");
+            var SHORT_4 = new Date("2015-03-25");
+        Định dạng đầy đủ: Trên là những định dạng ghi tắt, nếu truyền đầy đủ thì bạn 
+        phải truyền đẩy đủ (ngày - tháng - năm - giờ - phút - giây - timezone):
+            var d = new Date("Wed Mar 25 2015 09:56:24 GMT+0100 (W. Europe Standard Time)");
+-  Date javascript format dd/mm/yyyy:
+    + Đối với người Việt thì định dạng thường được sử dụng nhất đó là dd/mm/yyyy. Vậy 
+    cách khai báo nó như thế nào?
+    + Trong Javascript không hỗ trợ định dạng này vì nó đang sử dụng chuẩn quốc tế. Bạn 
+    phải sử dụng một thủ thuật chuyển đổi đơn giản như sau:
+        function getDDMMYYY(dateString) {
+            var dateParts = dateString.split("/");
+         
+            // Tháng bắt đầu từ 0 nên ta phải giảm đi 1: dataParts[1] - 1
+            return new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]); 
+        }
+        getDDMMYYYY('23/10/2015');
+- Các hàm xử lý ngày tháng trong Javascript
+    + Các hàm nhóm Date Get trong Javascript : Trong Javascript tổng cộng có 10 hàm thiết 
+    lập thời gian thông dụng:
+        getDate() lấy ngày (1 - 31)
+        getDay() lấy ngày trong tuần (0-6)
+        getFullYear() lấy năm đầy đủ (YYYY)
+        getYear() lấy năm 2 số cuối (YY)
+        getHours() lấy số giờ (0 - 23)
+        getMiliSeconds() lấy số mili giây (0 - 999)
+        getMinutes() lấy số phút (0 - 59)
+        getMonth() lấy tháng (0 - 11)
+        getSeconds() lấy số giây (0 - 59)
+        getTime() thời gian đã được convert sang dạng miliseconds.
+    + Các nhàm nhóm Date Set trong Javascript : Tương ứng với mỗi hàm Date Get thì sẽ có 
+    một hàm Date Set (trừ hàm getDay()).
+        setDate() thiết lập ngày (1 - 31)
+        setFullYear() thiết lập năm đầy đủ (YYYY)
+        setYear() thiết lậpnăm 2 số cuối (YY)
+        setHours() thiết lập số giờ (0 - 23)
+        setMiliSeconds() thiết lập số mili giây (0 - 999)
+        setMinutes() thiết lập số phút (0 - 59)
+        setMonth() thiết lập tháng (0 - 11)
+        setSeconds() thiết lập số giây (0 - 59)
+        setTime() thiết lập thời gian đã được convert sang dạng miliseconds.
+
+-----------------------------------------------------------------------------------------------
+
+* Cách dùng typeof trong Javascript để kiểm tra kiểu dữ liệu
+
+- Từ khóa typeof trong Javascript: Từ khóa typeof được dùng để kiểm tra kiểu dữ liệu của 
+một biến nào đó (hoặc một giá trị nào đó). Cú pháp của nó khá đơn giản như sau:
+    var x = typeof value;
+- Trong đó value có thể là một biến hoặc một giá trị xác định.
+    Dưới đây là tên một số kiểu dữ liệu và giá trị trả về tương ứng:
+        number - là các chữ số
+        string - là các chuỗi
+        object - là các đối tượng
+        undefined - không xác định
+        boolean - là kiểu boolean
+        symbol - là kiểu Symboy - có từ ES6 trở lên
+        function - là một function
+- Typeof null trong Javascript 
+    + Giá trị null là một object nên khi kết hợp với từ khóa typeof thì nó sẽ trả về giá 
+    trị "object".
+        console.log(typeof null === 'object'); // true
+        console.log(typeof null === 'null'); // false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
