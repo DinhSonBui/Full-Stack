@@ -1,0 +1,293 @@
+* BOM là gì? BOM trong javascript
+
+- BOM là chữ viết tắt của Browser Object Model, hay còn gọi là các đối tượng liên quan đến trình 
+duyệt browser. Mỗi browser sẽ có những đối tượng khác nhau nên nó không có một chuẩn chung nào cả. 
+Tuy nhiên, để có tính thống nhất giữa các trình duyệt thì người ta quy ước ra các loại BOM sau:
+    window
+    screen
+    location
+    history
+    navigator
+    popup
+    timing
+    cookies
+- Trong các đối tượng BOM trên có phân cấp lẫn nhau và trong đó window là cấp cao nhất vì nó đại
+diện cho browser.
+- Ví dụ khi bạn muốn truy cập tới document thì bạn sẽ viêt là window.document, tuy nhiên vẫn có 
+cách ghi tắt là document, muốn truy cập tới cookie thì ta viết window.document.cookie (viết tắt 
+document.cookie), ...
+
+-----------------------------------------------------------------------------------------------------
+
+* Đối tượng window trong Javascript
+
+- Trong javascript, window là một đối tượng thuộc nhóm BOM - tức là một object có những phương 
+thức và thuộc tính được dùng để xử lý trình duyệt.
+- Công dụng của window chủ yếu là các thao tác với trình duyệt như: Tính chiều cao - di chuyển - 
+thay đổi kích thước - mở ra một tab mới - lấy đường dẫn url của website. Vì vậy, nếu bạn đang xây
+dựng giao diện responsive thì sẽ cần sử dụng đến đối tượng này.
+- Window.innerHeight - lấy kích thước trình duyệt
+    + Để lấy kích thước chiều cao và chiều rộng của trình duyệt thì chúng ta sử dụng đối tượng window,
+    tuy nhiên với mỗi trình duyệt thì có những cách lấy khác nhau.
+    + Đối với Internet Explorer, Chrome, Firefox, Opera, và Safari thì cú pháp như sau:
+        // lấy chiều cao
+        var heightBrowser = window.innerHeight;  
+        // lấy chiều rộng
+        var widthBrowser = window.innerWidth;
+    + Đối với Internet Explorer các version 5,6,7,8 thì cú pháp như sau:
+        // Lấy chiều cao
+        var height = document.documentElement.clientHeight;
+        // hoặc
+        var height = document.body.clientHeight; 
+        // Lấy chiều rộng
+        var width = document.documentElement.clientWidth;
+        // hoặc
+        var width = document.body.clientWidth;
+    + Việc tương thích với các trình duyệt quá rắc rối phải không nào? Vậy có cách nào giải quyết 
+    vấn đề này không? Câu trả lời là có bằng cách sử dụng một mẹo nhỏ như sau:
+        var width = window.innerWidth
+                    || document.documentElement.clientWidth
+                    || document.body.clientWidth;
+             
+        var height = window.innerHeight
+                    || document.documentElement.clientHeight
+                    || document.body.clientHeight;
+- Thao tác đối tượng window trong javascript : Đối tượng window cung cấp một số phương thức giúp 
+thao tác với trình duyệt dễ dàng hơn.
+    + window.open() - mở một cửa sổ mới
+        Trong đó:
+            url : là đường dẫn website bạn muốn mở
+            name: là tên bạn đặt cho cửa sổ này
+            options: là một chuỗi các thông số được cách nhau bởi dấu phẩy, sau đây là các thông số thông dụng:
+            height=pixels : chiều cao của cửa sổ
+            width=pixels: chiều rộng của cửa sổ
+            top=pixels: vị trí hiển thị cửa sổ so với lề trên
+            left=pixels: vị trí hiển thị cửa sổ so với lề trái
+            menubar=yes|no|1|0: có hiển thị thanh menu hay không?
+            resizable=yes|no|1|0: có hiển thị biểu tượng resize cửa sổ hay không?
+            scrollbars=yes|no|1|0: có hiển thị thanh cuộn hay không?
+            status=yes|no|1|0: có hiển thị thanh trạng thái hay không?
+            titlebar=yes|no|1|0: có hiển thị titlebar hay không?
+            toolbar=yes|no|1|0: có hiển thị toolbar hay không?
+            fullscreen=yes|no|1|0: có hiển thị biểu tượng fullscreen hay không?
+    + window.close() - đòng cửa sổ : Sau khi mở cửa sổ thì để đóng cửa sổ đó chúng ta sử dụng 
+    lệnh windowObj.close(), trong đó windowObj là cửa sổ mà ta sử dụng lệnh window.open() tạo ra.
+    + window.moveTo() - di chuyển cửa sổ : Sau khi mở một cửa sổ nếu muốn di chuyển nó thì ta dùng 
+    lệnh windowObj.moveTo(top, left), trong đó:
+        top: là số pixels so với lề trên
+        left: là số pixels so với lề trái
+    + window.resizeTo() - thay đổi kích thước cửa sổ : Lúc mở cửa sổ bạn sẽ thiết lập height và 
+    with cho window, tuy nhiên nếu sau khi mở bạn muốn thay đổi thì sử dụng hàm 
+    windowObj.resizeTo(width, height), trong đó:
+        width: chiều rộng của cửa sổ
+        height: chiều cao của cửa sổ
+    + window.location.href - lấy url website : Nếu bạn muốn lấy đường dẫn hiện tại của trang web 
+    thì sử dụng lệnh sau.
+        let url = window.location.href;
+    
+--------------------------------------------------------------------------------------------------
+
+* Location trong Javascript - điều hướng URL trong Javascript
+
+- Location trong javascript là gì?
+    + BOM location là một đối tượng được dùng để xử lý các vấn đề liên quan đến URL của trang web 
+    trên trình duyệt. Nó được sử dụng rất nhiều trong lập trình web.
+    + Location là một thuộc tính đối tượng nằm trong đối tượng window, nên khi sử dụng nó bạn 
+    phải thông qua đối tượng window, và đối tượng window luôn là một biến toàn cục nên bạn hoàn 
+    toàn yên tâm khi sử dụng mà không cần phải khai báo.
+        window.location
+- Các phương thức của location trong javascript
+    + Có ba phương thức chính nằm trong đối tượng location đó là reload(), replace() và assign().
+    + window.location.reload(url) - tải lại trang web
+    + window.location.replace(url) - ghi đè trang web
+        Phương thức này ít khi sử dụng mà thay vào đó họ sử dụng cú pháp 
+            window.location.href="url". Tuy nhiên hai cách này vẫn có sự khác biệt:
+        Đối với replace() thì trình duyệt sẽ KHÔNG đưa vào lịch sử.
+        Đối với location.href thì trình duyệt sẽ CÓ đưa vào lịch sử Cú pháp như sau:
+            window.location.replace('https://freetuts.net');
+    + window.location.assign(url) - load một trang mới : Cú pháp như sau
+        window.location.assign('https://freetuts.net');
+-  Các thuộc tính của location trong Javascript
+    + Và đây là danh sách các thuộc tính đầy đủ cho đối tượng location này:
+        hash: thiết lập hoặc lấy phần sau dấu # của URL
+        host: thiết lập hoặc lấy hostname và port number của URL
+        hostname: thiết lập hoặc lấy hostname
+        href: thiết lập hoặc lấy URL
+        origin: trả về protocal, hostname và port number của URL
+        pathname: thiết lập hoặc lấy path name của URL
+        port: thiết lập hoặc lấy port của URL
+        search: lấy phần query string của URL
+    + Lưu ý : các thuộc tính trên bạn có thể dùng đẻ lấy (get) hoặc thiết lập (get).
+
+----------------------------------------------------------------------------------------------
+
+* History trong Javascript - quản lý lịch sử lướt web với javascript
+
+- History trong Javascript là gì? 
+    + Khi bạn lướt web thì trình duyệt sẽ lưu lại lịch sử lướt web của bạn. Dựa vào lịch 
+    sử đó, ta có thể xem lại những ngày trước đã xem những gì, truy cập vào những trang 
+    nào.. Tuy vấn đề này đã được trình duyệt hỗ trợ bằng các tính năng (back, forward, 
+    clear history). Nhưng nếu bạn cần sử dụng Javascript để xử lý thì sẽ có đối tượng 
+    window.history giúp bạn.
+    + Cũng như location, history cũng là một thành phần con của window nên chúng ta phải 
+    thông qua đối tượng window để thao tác với history.
+        window.history
+- Xem lịch sử lướt web bằng javascript
+    + Đếm tổng số trang đã lưu trong history
+         window.history.length;
+    + Đi tới một trang nào đó trong history : Chúng ta có ba phương thức thường dùng để đến một trang trong history:
+        history.back() : trở lại trang trước
+        history.forward() : đi tới trang kế tiếp
+        history.go(number): đi tới một trang:
+        nếu number âm thì tính từ trang hiện tại trừ đi number
+        nếu number dương thì tính từ trang hiện tại cộng với number
+
+-------------------------------------------------------------------------------------------
+
+* Cách dùng cookie trong Javascript
+
+- Cookie trong javascript là gì?
+    + Cookie là dữ liệu được lưu trữ trong một file text, và nằm trong máy tính, nên việc 
+    lưu trữ cookie sẽ là vĩnh viễn hoặc là một thời gian cụ thể, tất cả đều do bạn thiết 
+    lập. Tuy nhiên, mỗi domain chỉ có một dung lượng cookie tối đa, nên hãy lưu ý cho 
+    trường hợp cần lưu dữ liệu quá lớn.
+    + Để hiểu rõ hơn cookie là gì và tại sao lại sử dụng cookie thì mình đặt một trường hợp 
+    thế này: Giả sử bạn muốn lưu trữ một thông tin nào đó tại mỗi client (browser), và các 
+    lần truy cập tiếp theo (ngày mai, ngày một, một ngày nào đó, ..) có thể sử dụng được 
+    thông tin đó thì phải làm thế nào? Nếu sử dụng session trong PHP thì chỉ lưu trữ được 
+    một khoảng thời gian nhất định. Vậy giải pháp là ta sẽ sử dụng cookie.
+    + Cookie được lưu trữ ở dạng name=value, ví dụ:website=freetuts.net
+    + Khi trình duyệt gửi thông tin lên server thì cookies sẽ được gửi kèm theo. Chính vì 
+    vậy, trong ngôn ngữ phía backend như PHP, JSP.. cũng sẽ nhận được thông tin đó. Đây 
+    cũng là thông tin để trả lời cho câu hỏi tạo sao Cookie được lưu trữ ở Client mà trên 
+    Server vẫn đọc được, và ta cũng hay sử dụng Cookie để xây dựng chức năng Remember Me 
+    khi Login.
+- Các thao tác với Cookie trong Javascript
+    + Tạo Cookie : document.cookie = 'website=freetuts.net';
+    + Trường hợp bạn muốn lưu trữ nhiều Cookie thì chỉ việc tạo hai lần.
+        document.cookie = 'website=freetuts.net';
+        document.cookie = 'email=thehalfheart@gmail.com';
+    + Để thiết lập thời gian sống cho cookie thì ta sử dụng từ khóa expires, đặt trong 
+    cấu trúc của chuỗi cookie và ngăn cách bởi dấu hai chấm. Định dạng thời gian là UTC.
+        document.cookie="website=freetuts.net; expires=Thu, 0 Dec 2015 12:00:00 UTC";
+    + Lấy giá trị Cookie
+        var giatri = document.cookie;
+    + Đổi giá trị cho Cookie
+        // Giá trị cũ
+        document.cookie = "domain=freetuts.net";
+        // Đổi sang giá trị mới
+        document.cookie = "domain=newfreetuts.net";
+    + Xóa Cookie : Trong Javascript không có hàm xóa Cookie mà bạn phải sử dụng từ khóa 
+    expires để thiết lập thời gian sống cho Cookie là khoảng thời gian đã qua. Ví dụ hôm 
+    nay là ngày 8/11/2015 thì bạn chỉ việc gán expires là 7/8/2015 là đã xóa được Cookie 
+    đó.
+-  Viết hàm xử lý Cookie trong Javascript
+    + Vì cookie được lưu trữ ở dạng chuỗi các cặp key=value, và các chuỗi giá trị cách 
+    nhau bởi dấu chấm phẩy ; nên để lấy một giá nào đó bạn phải xử lý chuỗi rất phức tạp. 
+    Vì vậy, chúng ta phải viết hàm tạo và lấy cookie để sau này sử dụng tiện lợi hơn.
+     Hàm thiết lập Cookie
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+    
+    // Hàm lấy Cookie
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+- Một số lưu ý khi sử dụng cookie trong javascript
+    + Javascript được chạy và biên dịch tại client, nên nó không có tính bảo mật cao.
+    + Khi bạn lưu dữ liệu vào cookie thì dữ liệu sẽ được lưu trên chính máy tính của khách.
+     Vì vậy, bạn không nên lưu những dữ liệu mang tính bảo mật như mật khẩu, số thẻ ngân 
+     hàng ... mà chỉ lưu những thông tin cơ bản.
+    + Mỗi domain chỉ được lưu một dung lượng vào cookie có giới hạn. Vì vậy, bạn không nên 
+    lưu những dữ liệu quá lớn, điều này sẽ không đảm bảo tính toàn vẹ của dữ liệu.
+
+-------------------------------------------------------------------------------------------
+
+* Cách dùng window.navigator trong Javascript
+
+- Navigator trong Javascript, đây là đối tượng giúp bạn lấy được thông tin về trình duyệt 
+mà người dùng đang sử dụng.
+- Javascript navigator được dùng để kiểm tra các thông tin về người dùng như trình duyệt 
+đang sư dụng là gì? hệ điều hành đang sử dụng là gì? Trình duyệt có bật cookie hay không? 
+hay thậm chí có thể kiểm tra được tên và version của Browser.
+- Navigator là một thuộc tính của window, vì vậy bạn phải sử dụng cú pháp window.navigator 
+để truy cập đến các thuộc tính của navigator. Sau đây là cách sử dụng đối tượng này. Ngoài 
+ra, bạn cũng có thể sử dụng biến navigator, đây là một biến toàn cục đại diện cho 
+window.navigator.
+    console.log(navigator);
+- Kiểm tra Cookie có được bật không?
+    if (window.cookieEnabled){
+        alert("Có bật Cookie - freetuts.net");
+    }
+    else{
+        alert("Cookie đã bị tắt");
+    }
+- Window navigator kiểm tra tên trình duyệt đang sử dụng
+    document.write("App Name: " + window.navigator.appName + "<br/>");
+- Window navigator kiểm tra Engine của trình duyệt
+    document.write("Engine: " + navigator.product);
+- Window navigator kiểm tra vesion của trình duyệt
+    document.write("Cách 1: " + navigator.appVersion + "<br/>");
+    document.write("Cách 1: " + navigator.userAgent);
+- Window navigator kiểm tra hệ điều hành của client
+    document.write("Hệ điều hành: " + navigator.platform);
+- Window navigator kiểm tra ngôn ngữ của trình duyệt
+    document.write("Ngôn ngữ Browser: " + navigator.language);
+
+-----------------------------------------------------------------------------------------------
+
+* Cách dùng đối tượng screen trong Javascript
+
+- Trong bài này chúng ta sẽ tìm hiểu đối tượng screen trong Javascript, qua đó bạn sẽ biết 
+cách lấy thông tin về màn hình của trình duyệt.
+- Đối tượng screen là một thuộc tính của đối tượng window, vì vậy bạn có thể sử dụng một 
+trong hai cách. Thứ nhất là screen và thứ hai là window.screen.
+- Sceen lấy width và height của màn hình
+    + Chúng ta sử dụng thuộc tính screen.width để lấy chiều rộng và screen.height để lấy 
+    chiều cao của màn hình, kết quả sẽ trả về định dạng Pixels.
+        document.write("With screen: " + screen.width + "<br/>");
+        document.write("Height screen: " + screen.height);
+    + Ngoài ra để lấy chiều rộng và chiều cao mà không tính các tools tính năng của trình 
+    duyệt thì bạn sử dụng screen.availWidth và screen.availHeight.
+        document.write("With Available screen: " + screen.availWidth + "<br/>");
+        document.write("Height Available screen: " + screen.availHeight);
+- Screen lấy Color Depth của 
+    screendocument.write("Color Depth: " + screen.colorDepth);
+- Lấy số Pixel depth của screen
+    document.write("Pixel Depth: " + screen.pixelDepth);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
