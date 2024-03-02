@@ -269,7 +269,7 @@ trong đó value là một biến hoặc một giá trị mà bạn muốn in ra
 ---------------------------------------------------------------------------------------------------
 
 * Hàm setTimeout() và setInterval() trong Javascript
-
+f
 - Hàm setTimeout() dùng để thiết lập một khoảng thời gian nào đó sẽ thực hiện một nhiệm vụ nào 
 đó và nó chỉ thực hiện đúng một lần.
     Cú pháp: setTimeout(function, time)
